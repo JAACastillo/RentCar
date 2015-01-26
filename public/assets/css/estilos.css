@@ -1,0 +1,345 @@
+.post_2 .checkbox-block_container{
+	height: 60px;
+}
+
+.post_2 .additional-block {
+
+	top: -70px;
+
+}
+
+.block-form {
+
+	margin-top: -15px;
+
+}
+
+.text-justify {
+
+
+
+	text-align: justify;
+
+
+
+}
+
+
+
+.alert{padding:15px;margin-bottom:20px;border:1px solid transparent;border-radius:4px}
+
+
+
+.alert-danger{color:#a94442;background-color:#f2dede;border-color:#ebccd1}
+
+
+
+.alert-dismissable .close,.alert-dismissible .close{position:relative;top:-2px;right:-21px;color:inherit}
+
+
+
+.close{float:right;font-size:21px;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;filter:alpha(opacity=20);opacity:.2}.close:hover,.close:focus{color:#000;text-decoration:none;cursor:pointer;filter:alpha(opacity=50);opacity:.5}button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:0 0;border:0}
+
+
+
+/**
+
+
+
+** PAGINACION
+
+
+
+**/
+
+
+
+.pagination > li > a,.pagination>li>span {
+
+
+
+	background: #fdfdfd;
+
+
+
+	border: 1px solid #d2d2d2;
+
+
+
+	color: #9ca0a6;
+
+
+
+	cursor: pointer;
+
+
+
+    float: left;
+
+
+
+    position: relative;
+
+
+
+    text-align: center;
+
+
+
+    height: 44px;
+
+
+
+    width: 46px;
+
+
+
+    margin: 0 4px 0 5px;
+
+
+
+    font-size: 14px;
+
+
+
+    font-weight: bold;
+
+
+
+    line-height: 44px;
+
+
+
+   	-moz-border-radius: 5px;
+
+
+
+	-webkit-border-radius:5px;
+
+
+
+	border-radius: 5px;
+
+
+
+}
+
+
+
+.pagination>li.active>span {
+
+
+
+	color: #fff;	
+
+
+
+	background: #ee7835;
+
+
+
+	background: linear-gradient(to top, #f08643, #ec702f);
+
+
+
+	border: 1px solid #cc692f;
+
+
+
+	-moz-box-shadow: 0 1px 2px 0 #f5ac7c inset;
+
+
+
+    -webkit-box-shadow: 0 1px 2px 0 #f5ac7c inset;
+
+
+
+    box-shadow: 0 1px 2px 0 #f5ac7c inset;
+
+
+
+}
+
+
+
+.pagination > li:hover {
+
+
+
+	color: #434b56;	
+
+
+
+	background: #f2f2f2;
+
+
+
+	box-shadow: none;
+
+
+
+}
+
+
+
+.details-more li {
+
+
+
+	list-style: square;
+
+
+
+}
+
+
+
+
+
+
+
+/** 
+
+
+
+** PAGE CONTINUE_BUTTON
+
+
+
+**/
+
+
+
+a.continue_button {	
+
+
+
+	color: white;
+
+
+
+	padding: 14px 40px 16px 20px;
+
+
+
+	border-radius: 5px;
+
+
+
+	text-decoration: none;
+
+
+
+	font-size: 14px;
+
+
+
+}
+
+
+
+a.continue_button:hover {
+
+
+
+	color: #afd2f9;
+
+
+
+}
+
+
+
+a.continue_button.orange_button {
+
+
+
+	background: url(../images/continue_button.png) no-repeat right center #f08643;
+
+
+
+}
+
+
+
+a.continue_button.orange_button:hover {
+
+
+
+	background: url(../images/continue_button_hover.png) no-repeat right center #ec702f;
+
+
+
+}
+
+
+
+a.continue_button.blue_button {
+
+
+
+	background: url(../images/continue_button.png) no-repeat right center #4296f0;
+
+
+
+}
+
+
+
+a.continue_button.blue_button:hover {
+
+
+
+	background: url(../images/continue_button_hover.png) no-repeat right center #2f82ec;
+
+
+
+}
+
+
+
+a.continue_button.green_button {
+
+
+
+	background: url(../images/continue_button.png) no-repeat right center #5dcc37;
+
+
+
+}
+
+
+
+a.continue_button.green_button:hover {
+
+
+
+	background: url(../images/continue_button_hover.png) no-repeat right center #3a414b;
+
+
+
+}
+
+
+
+a.continue_button.grey_button {
+
+
+
+	background: url(../images/continue_button.png) no-repeat right center #4f5761;
+
+
+
+}
+
+
+
+a.continue_button.grey_button:hover {
+
+
+
+	background: url(../images/continue_button_hover.png) no-repeat right center #3a414b;
+
+
+
+}

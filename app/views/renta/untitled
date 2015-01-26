@@ -1,0 +1,48 @@
+<div id="content" class="sidebar-middle" ng-controller="extraController">
+
+		<div class="widget main-widget product-widget main-widget-3column">
+			<div class="widget-title">
+				<div>
+					<img src="images/list.png" alt="" />
+					Extras disponibles
+				</div>
+				<div class="clear"></div>	
+			</div>
+			<div  ng-repeat="extra in extras">
+				<div class="post">
+					<div class="checkbox-block_container">
+						<div class="main-block_container">
+							<div class="additional-block_container">
+								<div class="checkbox-block">
+									<input type="checkbox" class="styled" name="checkbox_extras" value="1" />
+								</div>
+								<div class="main-block">									
+									<div class="product-img">
+										<img src="http://placehold.it/105x95" alt="" />
+									</div>
+									<div class="product-info">
+										<h3 class="entry-format" ng-bind="extra.nombre"></h3>
+										<div ng-bind="extra.descripcion"></div>
+										<div>Satellite Navigation System provides turn-by-turn directions. If your pickup and return location are not the same you may be charged a surcharge fee</div>
+											<div class="details">
+												<div class="view-details">[+] More details</div>
+												<div class="close-details">[-] Close details</div>
+											</div>
+										</div>
+										<p class="details-more">Proin a ipsum neque, sit amet adipiscing est. Donec iaculis erat ut ante ultricies at congue lectus lobortis. Maecenas ac varius felis. Nam sollicitudin dignissim nisl, non pretium urna luctus vitae. Phasellus et dolor ipsum, a vestibulum est. Phasellus eros leo, rutrum ac tempor nec.</p>								
+										
+									</div>
+								<div class="additional-block">
+									<p ng-bind="extra.precio | currency"></p>
+								</div>
+							</div>									
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>	
+			</div>				
+		</div>
+		<div class="next_page">
+			<input class="continue_button blue_button" type="submit" value="Continue to checkout" />
+		</div>
+</div>

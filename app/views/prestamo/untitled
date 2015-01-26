@@ -1,0 +1,54 @@
+<a href="{{ route('contratoEditar', array($prestamo->id)) }}" data-content="Contrato de Arrendamiento" data-placement="bottom" class="crearContrato glyphicon glyphicon-file tool"> </a>
+<a href="{{ route('contratoEditar', array($prestamo->id)) }}" data-content="Pagare" data-placement="bottom" class="crearPagare glyphicon glyphicon-file tool"> </a>
+<a href="#" data-id="{{ $prestamo->id }}" data-form="#form-prt" data-content="Eliminar" data-placement="bottom" class="glyphicon glyphicon-trash tool"> </a>
+<a href="#" class="opc glyphicon glyphicon-chevron-up" data-content="
+    <a href={{ route('prestamoEditar', $prestamo->id) }}>Editar</a>
+    <br>
+    <a href={{ route('prestamoShow', $prestamo->id) }}>Ver</a>
+    @if($prestamos->estado == 'Pre-reservado')
+        <br>
+        <a href={{ route('prestamoConfirmar', array($prestamo->id,$prestamos->modelo_id)) }}>Confirmar Reserva</a>
+    @endif
+    @if($prestamos->estado == 'Pendiente de Pago')
+        <br>
+        <a href={{ route('prestamoRequerimiento', array($prestamo->id)) }}>Requerimiento de Pago</a>
+    @endif
+    ">
+</a>
+
+
+<div class="col-md-3 col-sm-3">
+                <div id="my_carusel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach ($modelos->fotos as $key => $fotos)
+                            <div class="item @if($key == 0) {{ 'active' }} @endif">
+                                <img alt='Foto del Auto' src='{{ asset("assets/img/$fotos->ruta_imagen") }}' class='img-responsive' />
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <a class="left carousel-control" href="#my_carusel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#my_carusel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+
+
+            @if($carro->id != 1)
+                <a href="{{ route('selectAuto', array($prestamo->id,$carro->id,$carro->precios->first()->id)) }}" class="btn btn-danger">
+                    Seleccionar <br/>
+                    Precio: <span class="glyphicon glyphicon-usd"> </span> {{ $carro->precio }}
+                </a>
+            @else
+                <a href="{{ route('quitarModelo', $prestamo->id) }}" class="btn btn-primary">
+                    Seleccionado <br/>
+                    Precio: <span class="glyphicon glyphicon-usd"> </span> {{ $carro->precio}}
+                </a>
+            @endif
