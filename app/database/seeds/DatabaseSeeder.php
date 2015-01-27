@@ -10,25 +10,25 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Eloquent::unguard();
-		// $this->call('empresaSeeder');
-		// $this->call('lugaresSeeder');
-		// $this->call('userSeeder');
+		$this->call('empresaSeeder');
+		$this->call('lugaresSeeder');
+		$this->call('userSeeder');
 
-		// $this->call('marcaSeeder');
-		// $this->call('modelosSeeder');
+		$this->call('marcaSeeder');
+		$this->call('modelosSeeder');
 
-		// $this->call('tipoSeeder');
+		$this->call('tipoSeeder');
 
-		// $this->call('combustibleSeeder');
-		// $this->call('colorSeeder');
+		$this->call('combustibleSeeder');
+		$this->call('colorSeeder');
 
-		// $this->call('estadoCarros');
-		// $this->call('estadoSeeder');
+		$this->call('estadoCarros');
+		$this->call('estadoSeeder');
 
 		$this->call('tipoMantenimientos');
 		$this->call('tipoDocumentos');
 
-		// $this->call('UserTableSeeder');
+		$this->call('UserTableSeeder');
 	}
 
 }
