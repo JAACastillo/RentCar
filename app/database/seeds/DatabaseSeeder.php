@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('userSeeder');
 
 		// $this->call('marcaSeeder');
-		$this->call('modelosSeeder');
+		// $this->call('modelosSeeder');
+
+		$this->call('tipoSeeder');
 
 		// $this->call('UserTableSeeder');
 	}
