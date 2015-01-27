@@ -4,7 +4,7 @@
         // use SoftDeletingTrait;
         public $errors;
         protected $table = 'tipoCarros';
-        public $timestamp = false;
+        public $timestamps = false;
         // protected $dates = ['deleted_at'];
         // protected $perPage = 5;
         protected $fillable = ['tipo'];
