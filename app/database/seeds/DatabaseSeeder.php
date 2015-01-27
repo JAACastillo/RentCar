@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('tipoMantenimientos');
 		$this->call('tipoDocumentos');
 
-		$this->call('UserTableSeeder');
+		// $this->call('UserTableSeeder');
 	}
 
 }
