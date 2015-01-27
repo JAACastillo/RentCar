@@ -3,7 +3,7 @@
 class PlacasController extends BaseController{
 	public function index($id){
 		$carro = carro::find($id);
-		return $this->show($carro, new placa, array('placaGuardar',$id), 'POST');
+		return $this->show($carro, new Placa, array('placaGuardar',$id), 'POST');
 	}
 
 	public function guardar($id){
