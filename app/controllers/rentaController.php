@@ -72,10 +72,12 @@ class rentaController extends BaseController{
                 //en esta parte habria que enviar un correo al cliente
                 //con los datos de la reserva, diciendole que alguien se pondra en contacto con el para 
                 //confirmar la reserva.
-                Mail::send('emails.confirmacion.template', array('prestamo' => $prestamo), function($message) use ($prestamo)
-                {
-                    $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Confirmación de solicitud ' . $prestamo->carro->modelo->nombre);
-                });
+                if($prestamo->cliente->email){
+                    Mail::send('emails.confirmacion.template', array('prestamo' => $prestamo), function($message) use ($prestamo)
+                    {
+                        $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Confirmación de solicitud ' . $prestamo->carro->modelo->nombre);
+                    });
+                }
                 return Response::json($prestamo, 201);
             }
 
