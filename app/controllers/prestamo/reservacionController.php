@@ -89,10 +89,10 @@ class reservacionController extends BaseController
             App::abort(404);
         $prestamo->estado_id = 4;
         $prestamo->save();
-        Mail::send('emails.reservado', array('prestamo' => $prestamo), function($message) use ($prestamo)
-        {
-            $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Prestamo aprobado ' . $prestamo->carro->modelo->nombre);
-        });
+        // Mail::send('emails.reservado', array('prestamo' => $prestamo), function($message) use ($prestamo)
+        // {
+        //     $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Prestamo aprobado ' . $prestamo->carro->modelo->nombre);
+        // });
 
         return Redirect::route('formaPago',$id);
     }
