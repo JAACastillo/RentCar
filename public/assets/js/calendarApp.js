@@ -5,7 +5,7 @@
 	var options = {
 		events_source: 'eventos',
 		view: 'month',
-		tmpl_path: 'tmpls/',
+		tmpl_path: 'tmpls/' ,
 		// language: 'es-MX',
 		// tmpl_cache: false,
 		
