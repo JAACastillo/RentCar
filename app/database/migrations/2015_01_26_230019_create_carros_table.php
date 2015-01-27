@@ -14,7 +14,7 @@ class CreateCarrosTable extends Migration {
 	{
 		Schema::create('carros', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->integer('empresa_id')->index('carro_empresas');
 			$table->integer('modelo_id')->index('carro_modelos');
 			$table->integer('ano');

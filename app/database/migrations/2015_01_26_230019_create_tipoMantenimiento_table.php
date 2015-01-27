@@ -14,7 +14,7 @@ class CreateTipoMantenimientoTable extends Migration {
 	{
 		Schema::create('tipoMantenimiento', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('nombre', 25);
 		});
 	}

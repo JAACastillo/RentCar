@@ -14,7 +14,7 @@ class CreateExtrasTable extends Migration {
 	{
 		Schema::create('extras', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('nombre', 50);
 			$table->text('descripcion', 65535);
 			$table->float('precio', 5);

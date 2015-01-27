@@ -14,7 +14,7 @@ class CreateFotosTable extends Migration {
 	{
 		Schema::create('fotos', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->integer('carro_id')->index('fotos_carros');
 			$table->integer('ruta');
 			$table->timestamps();

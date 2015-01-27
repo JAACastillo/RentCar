@@ -14,7 +14,7 @@ class CreateClientesTable extends Migration {
 	{
 		Schema::create('clientes', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->integer('empresa_id')->index('Clientes_Empresas');
 			$table->enum('como', array('cliente','prospecto'));
 			$table->string('tipo', 10);

@@ -14,7 +14,7 @@ class CreatePlacasTable extends Migration {
 	{
 		Schema::create('placas', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('numero', 20);
 			$table->string('kilometraje', 20);
 			$table->integer('carro_id')->index('carro_id');

@@ -14,7 +14,7 @@ class CreateEstadosCarroTable extends Migration {
 	{
 		Schema::create('estadosCarro', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('nombre', 11);
 		});
 	}

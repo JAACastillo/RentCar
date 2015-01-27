@@ -14,7 +14,7 @@ class CreateTipoCarrosTable extends Migration {
 	{
 		Schema::create('tipoCarros', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->text('nombre', 65535);
 		});
 	}

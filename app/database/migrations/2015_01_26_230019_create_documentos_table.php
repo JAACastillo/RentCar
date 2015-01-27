@@ -14,7 +14,7 @@ class CreateDocumentosTable extends Migration {
 	{
 		Schema::create('documentos', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('numero', 25);
 			$table->integer('Cliente_id')->index('documentos_Clientes');
 			$table->integer('tipoDocumento_id')->index('documentos_tipoDocumentos');

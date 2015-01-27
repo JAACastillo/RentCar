@@ -14,7 +14,7 @@ class CreateTelefonosTable extends Migration {
 	{
 		Schema::create('telefonos', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('numero', 25);
 			$table->integer('Cliente_id')->index('telefonos_Clientes');
 			$table->enum('tipo', array('Movil','Fijo','Extranjero','local'));

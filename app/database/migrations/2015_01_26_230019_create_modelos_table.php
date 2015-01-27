@@ -14,7 +14,7 @@ class CreateModelosTable extends Migration {
 	{
 		Schema::create('modelos', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('nombre', 11);
 			$table->integer('marca_id')->index('modelos_marcas');
 		});

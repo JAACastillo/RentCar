@@ -14,7 +14,7 @@ class CreateLugaresTable extends Migration {
 	{
 		Schema::create('lugares', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('nombre', 11);
 			$table->integer('empresa_id')->index('lugares_Empresas');
 		});

@@ -14,7 +14,7 @@ class CreateMantenimientosTable extends Migration {
 	{
 		Schema::create('mantenimientos', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->integer('placa_id');
 			$table->integer('tipoMantenimiento_id');
 			$table->text('detalles', 65535);

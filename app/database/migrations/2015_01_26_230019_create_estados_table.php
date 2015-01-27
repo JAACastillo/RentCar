@@ -14,7 +14,7 @@ class CreateEstadosTable extends Migration {
 	{
 		Schema::create('estados', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->string('nombre', 20);
 			$table->string('url', 30);
 			$table->string('popUpText', 25);

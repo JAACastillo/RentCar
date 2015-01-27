@@ -14,7 +14,7 @@ class CreatePreciosTable extends Migration {
 	{
 		Schema::create('precios', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->float('cantidad', 5);
 			$table->date('fechaInicio');
 			$table->date('fechaFin');

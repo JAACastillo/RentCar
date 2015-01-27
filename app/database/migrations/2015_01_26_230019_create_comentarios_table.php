@@ -14,7 +14,7 @@ class CreateComentariosTable extends Migration {
 	{
 		Schema::create('comentarios', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->integer('Cliente_id')->index('comentarios_Clientes');
 			$table->text('texto', 65535);
 			$table->timestamps();

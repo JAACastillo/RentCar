@@ -14,7 +14,7 @@ class CreatePrestamoExtraTable extends Migration {
 	{
 		Schema::create('prestamoExtra', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->increments('id');
 			$table->float('precio', 5);
 			$table->integer('prestamo_id')->index('prestamoExtra_prestamos');
 			$table->integer('extra_id')->index('prestamoExtra_extras');
