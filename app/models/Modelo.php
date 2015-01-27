@@ -4,6 +4,7 @@
         // use SoftDeletingTrait;
         public $errors;
         protected $table = 'modelos';
+        public $timestamps = false;
         // protected $dates = ['deleted_at'];
         protected $perPage = 5;
 
