@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('combustibleSeeder');
 		// $this->call('colorSeeder');
 
-		$this->call('estadoCarros');
+		// $this->call('estadoCarros');
 		$this->call('estadoSeeder');
 
 		// $this->call('UserTableSeeder');
