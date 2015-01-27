@@ -3,6 +3,9 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
+	"require-dev": {
+		"heroku/heroku-buildpack-php": "dev-master"
+	},
 	"require": {
 		"vinkla/base62": "~1.0",
 		"laravel/framework": "4.2.*",
