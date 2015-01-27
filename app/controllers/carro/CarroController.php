@@ -93,7 +93,7 @@ class CarroController extends BaseController {
 		$manto = new Cliente;
 		$form = new Formulario;
 		$paso = 5;
-		$carro = Carro::find($id);
+		$carro = carro::find($id);
 		// $carros = $carro->lists('','id');
 		$carros = [
 				'' => 'Seleccione el numero de placa',
