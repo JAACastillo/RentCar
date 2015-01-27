@@ -23,7 +23,10 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('colorSeeder');
 
 		// $this->call('estadoCarros');
-		$this->call('estadoSeeder');
+		// $this->call('estadoSeeder');
+
+		$this->call('tipoMantenimientos');
+		$this->call('tipoDocumentos');
 
 		// $this->call('UserTableSeeder');
 	}

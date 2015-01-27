@@ -108,7 +108,7 @@ class rentaController extends BaseController{
 
 //para angular
     public function carros($inicio, $fin){
-        $prestamo = new prestamo;
+        $prestamo = new Prestamo;
         $prestamo->fechaReserva = $inicio;
 
         // return $inicio;
