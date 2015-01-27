@@ -2,7 +2,7 @@
 
 class combustibleSeeder extends Seeder{
 	public function run(){
-		Combustible::create('nombre' => 'Gasolina');
-		Combustible::create('nombre' => 'Diesel');
+		Combustible::create(array('nombre' => 'Gasolina'));
+		Combustible::create(array('nombre' => 'Diesel'));
 	}
 }
