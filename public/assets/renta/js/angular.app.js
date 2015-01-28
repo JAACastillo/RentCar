@@ -35,7 +35,7 @@ app.controller('reservaController', ['reservaService', '$log', '$scope', '$rootS
 	 }
 
 	
-		 $scope.reserva = reservaService.get();
+		 $scope.reserva = reservaService.get('fechaReserva');
 	if($scope.reserva.carro){
 		 $scope.reserva.dias = restaFechas($scope.reserva.fechaReserva.replace(' ', '-'), $scope.reserva.fechaDevolucion.replace(' ', '-'));
 		 $scope.reserva.totalCarro = $scope.reserva.dias * $scope.reserva.carro.precio;
@@ -87,7 +87,7 @@ app.controller('reservaController', ['reservaService', '$log', '$scope', '$rootS
 }])
 
 app.factory('reservaService', ['$window', '$log', function ($window, $log){
-	function get(lugar = "fechaReserva"){
+	function get(lugar){
 		return JSON.parse($window.localStorage[lugar] || defecto());
 	}
 
@@ -118,7 +118,7 @@ app.factory('reservaService', ['$window', '$log', function ($window, $log){
 	// $scope.currentPage = 1;
 
 	function search(pageNo){
-		$scope.reserva = reservaService.get();
+		$scope.reserva = reservaService.get('fechaReserva');
 	if($scope.reserva.fechaReserva){
 		$scope.loading = true;
 		$timeout(function(){
@@ -191,7 +191,7 @@ app.factory('reservaService', ['$window', '$log', function ($window, $log){
 	}
 
 	function set(carro){
-		reserva = reservaService.get();
+		reserva = reservaService.get('fechaReserva');
 		reserva.carro = carro;
 		reservaService.set(reserva);
 		$log.info(reserva)
@@ -261,7 +261,7 @@ app.factory('reservaService', ['$window', '$log', function ($window, $log){
 	getService.all('user').then(function (user){
 		$scope.user = user;
 	})
-	reserva = reservaService.get(); //obteniendo datos de reserva
+	reserva = reservaService.get('fechaReserva'); //obteniendo datos de reserva
 	if(! reserva.carro){
 		$timeout(function(){
 			$window.location = 'choose-car';
