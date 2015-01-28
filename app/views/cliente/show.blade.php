@@ -10,7 +10,6 @@
     </div>
     <div class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-2 text-right col-xs-6">
         <br/>
-        <a href="{{ route('clienteImagenes', $cliente->id) }}" class="showFoto" data-modal='#showImagen'>Imagenes</a> |
         <a href="{{ route('clienteEditar', $cliente->id) }}">Editar</a>
     </div>
 </div>

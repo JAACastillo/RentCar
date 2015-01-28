@@ -6,13 +6,11 @@ class clientePaso_4Controller extends BaseController
     //nuevo paso 4
 
     public function verDocumentos($id){
-        $documento = new documento;
-        $documento->cliente_id = $id;
-        return $this->showInformacion($id, $documento, "POST");
+        return $this->showInformacion($id, new documento, "POST");
     }
 
     public function showInformacion($id, $documento, $metodo){
-        $cliente = $documento->cliente;//Cliente::find($documento->cliente_id);
+        $cliente = Cliente::find($id);
         $documentos = $cliente->documentos;
         $paso = 4;
         $tipoDocumentos = tipoDocumento::lists('tipo', 'id');
