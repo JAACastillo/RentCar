@@ -44,6 +44,6 @@ class documento extends Eloquent {
 		return $this->belongsTo('tipoDocumento', 'tipoDocumento_id');
 	}
 	public function cliente(){
-		return $this->belongsTo('cliente', 'Cliente_id');
+		return $this->belongsTo('Cliente', 'Cliente_id');
 	}
 }
