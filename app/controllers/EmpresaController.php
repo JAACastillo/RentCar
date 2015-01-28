@@ -71,6 +71,7 @@ class EmpresaController extends BaseController{
 		// return $data;
 
 		if($empresa->validAndSave($data)){
+			$this->crearUsuario($empresa);
 			return Redirect::route('empresas');
 		}
 
@@ -79,4 +80,18 @@ class EmpresaController extends BaseController{
 						->withInput();
 
 	}
+
+
+	private function crearUsuario($empresa){
+		$usuario = User::where('email', $empresa->email)->get();
+		if(!$usuario->isEmpty()){
+			$usuario = new User;
+			$usuario->nombre 		= $empresa->nombre;
+			$usuario->email 		= $empresa->email;
+			$usuario->password 		= Hash::make(strtolower($empresa->email));
+			$usuario->empresa_id	= $empresa->id;
+		}
+	}
+
+
 }
