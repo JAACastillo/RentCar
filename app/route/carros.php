@@ -42,3 +42,7 @@ Route::get('carro/modelos/{id}', function($marca){
 	$modelos = Modelo::where('marca_id', "=" ,$marca)->get();
 	return Response::json($modelos,200);
 });
+Route::get('carro/{dd}/modelos/{id}', function($dd, $marca){
+	$modelos = Modelo::where('marca_id', "=" ,$marca)->get();
+	return Response::json($modelos,200);
+});
