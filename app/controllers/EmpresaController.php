@@ -84,7 +84,7 @@ class EmpresaController extends BaseController{
 
 	private function crearUsuario($empresa){
 		$usuario = User::where('email', $empresa->email)->get();
-		if(!$usuario->isEmpty()){
+		if($usuario->isEmpty()){
 			$usuario = new User;
 			$usuario->nombre 		= $empresa->nombre;
 			$usuario->email 		= $empresa->email;
