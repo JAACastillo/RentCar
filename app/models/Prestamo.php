@@ -35,7 +35,7 @@ class Prestamo extends Eloquent
                 'fechaDevolucion'   => 'required',
                 'lugarEntrega_id'   => 'required',
                 'cobroPorHora'      => 'required',
-                'estado_id'         => 'required'
+                // 'estado_id'         => 'required'
             ];
         return $this->validAndSave($data, $rules);
     }
