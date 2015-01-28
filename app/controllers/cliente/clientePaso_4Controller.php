@@ -12,7 +12,7 @@ class clientePaso_4Controller extends BaseController
     }
 
     public function showInformacion($id, $documento, $metodo){
-        $cliente = Cliente::find($documento->cliente_id);
+        $cliente = $documento->cliente;//Cliente::find($documento->cliente_id);
         $documentos = $cliente->documentos;
         $paso = 4;
         $tipoDocumentos = tipoDocumento::lists('tipo', 'id');
