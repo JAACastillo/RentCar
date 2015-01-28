@@ -35,7 +35,7 @@
 							@if(Auth::check())
 								<?php
 								           $name = explode(" ", Auth::user()->nombre);
-								           $name = $name[0]. ' '.end($name) . Auth::user()->tipo;
+								           $name = $name[0]. ' '.end($name);
 								       ?>
 								       <ul class="nav navbar-nav navbar-right">
 								           <li class="dropdown">
