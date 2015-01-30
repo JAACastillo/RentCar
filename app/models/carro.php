@@ -35,7 +35,7 @@ class carro extends Eloquent {
 	        'motor' 			=> 'required|max:20',
 	        'transmision' 		=> 'required|max:50',
 	        'puertas' 			=> 'required|integer',
-	        'color_id' 			=> 'required',
+	        // 'color_id' 			=> 'required',
 	        'capacidad' 		=> 'required|max:20',
 	        'kmGalon' 			=> 'required|max:30',
 	        'combustible_id' 	=> 'required|max:30',

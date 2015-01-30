@@ -29,7 +29,6 @@ class CreateCarrosTable extends Migration {
 			$table->integer('tipoCarro_id')->default(1)->index('carro_tipoCarro');
 			$table->timestamps();
 			$table->boolean('activo');
-			$table->integer('color_id')->index('carros_colores');
 			$table->integer('estado_id')->default(1)->index('carros_estado');
 			$table->integer('combustible_id')->index('carros_combustibles');
 			$table->integer('proveedor');

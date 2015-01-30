@@ -11,7 +11,7 @@
     
 
     <div class="panel-body" ng-init='modeloID = <?php echo $carro->modelo_id ?>'>
-
+    @include('errores')
         <div class="col-md-6 col-sm-6">
 
             <div class="panel panel-default">
@@ -104,17 +104,6 @@
                 </div>
 
                 <div class="panel-body">
-
-                <div class="form-group">
-                    {{ Form::label('proveedor', 'Proveedor ', array('class' => 'control-label col-md-4 col-sm-4')) }}
-                    <div class="col-md-7 col-sm-7 input-group">
-                        <span class="input-group-addon glyphicon glyphicon-time"> </span>
-                        {{ Form::text('proveedor', null, array('placeholder' => 'Proveedor del carro', 'class' => 'form-control')) }}
-                        @if($errors->has('proveedor') )
-                            <span class="input-group-addon glyphicon glyphicon-remove alert-danger"> </span>
-                        @endif
-                    </div>
-                </div>
 
                 <div class="form-group">
                     {{ Form::label('ano', 'Año *', array('class' => 'control-label col-md-4 col-sm-4')) }}

@@ -16,6 +16,7 @@ class CreatePlacasTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('numero', 20);
+			$table->integer('color_id', 10);
 			$table->string('kilometraje', 20);
 			$table->integer('carro_id')->index('carro_id');
 			$table->string('proveedor', 40);
