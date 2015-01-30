@@ -6,7 +6,3 @@ composer.phar
 .DS_Store
 Thumbs.db
 .env
-app/config/database.php
-app/config/database.php
-
-app/config/database.php
