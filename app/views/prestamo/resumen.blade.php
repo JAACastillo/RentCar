@@ -40,6 +40,7 @@
 						{{round($extra->cantidad($prestamo->dias,$prestamo->horas),2)}}
 					</small>
 				</h4>
+				
 				<a href="{{route('extraDelete',$extra->id)}}" style="   position: absolute;
 																	    right: 0px;
 																	    top: 0px;

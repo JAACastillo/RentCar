@@ -42,6 +42,8 @@ class reservacionController extends BaseController
 
         //return date('Y-m-d h:i A', strtotime($data['fechaDevolucion']));
         if($prestamo->validarPrestamo($data)) {
+
+            $this->agregarExtras($prestamo);
             return Redirect::route('selectModelo',$prestamo->id);
         }        
 
@@ -59,6 +61,29 @@ class reservacionController extends BaseController
 
         return $this->crearReserva($prestamo, "PATCH", array('prestamoUpdate',$id), 1);  
     }
+
+    private function agregarExtras($prestamo){
+        
+    $matchThese = ['empresa_id' => Auth::user()->empresa->id, 'obligatorio' => '1', 'activo' => '1'];
+      $extras  = Extra::where($matchThese)->get();
+
+        // var_dump($extras);
+        // $extras = Extra::whereRaw("SELECT * FROM `extras` WHERE `obligatorio` =1 AND `obligatorio` =1 AND `activo` = 1 AND 'empresa_id' = " . Auth::user()->empresa->id)
+        //                     ->get();
+                        // return $extras;
+        foreach ($extras as $extra) {
+            # code...
+            prestamoExtra::create(array(
+                    'extra_id'      => $extra->id,
+                    'prestamo_id'   => $prestamo->id,
+                    'precio'        => $extra->precio,
+                    'unaVez'        => $extra->cobro
+                ));
+
+        }
+        return true;
+    }
+
 
     public function update($id) {
         $prestamo = Prestamo::find($id);
