@@ -10,9 +10,11 @@
             <div class="row">
                 <div class="col-md-12">
                  <h1 class='text-center'>Empresas</h1>
+                 @if(Auth::user()->empresa->id == 1)
                     <a href="{{ route('empresaNuevo') }}" class="btn btn-default">
                         <span class="glyphicon glyphicon-file"></span> Nuevo
                     </a>
+                @endif
                 </div>
             </div>
         </div>

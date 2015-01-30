@@ -8,6 +8,7 @@
 	},
 	"require": {
 		"ext-mbstring": "*",  
+		"ext-gd": "*",  
 		"vinkla/base62": "~1.0",
 		"laravel/framework": "4.2.*",
 		"barryvdh/laravel-dompdf": "0.4.*",
