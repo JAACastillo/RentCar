@@ -6,3 +6,6 @@ composer.phar
 .DS_Store
 Thumbs.db
 .env
+*.jpg
+
+*.PNG

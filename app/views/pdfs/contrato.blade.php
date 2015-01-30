@@ -167,7 +167,7 @@
 			<br/>
 			<div>
 				<strong>
-					<span class="left" style="width: 30%;">{{ strtoupper($prestamo->carro->color->color) }}</span>
+					<span class="left" style="width: 30%;">{{ strtoupper($prestamo->placa->color->color) }}</span>
 					<span class="center" style="left: 210px;">${{ $prestamo->valorReposicion }} dólares de los USA</span>
 					<span class="right" style="width: 30%;">{{ strtoupper($prestamo->placa->numero) }}</span>
 				</strong>
