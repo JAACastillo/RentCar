@@ -22,8 +22,9 @@
                 <li>{{ HTML::link(route('prestamoLista'), 'Prestamos') }}</li>
                 <li>{{ HTML::link(route('clienteLista'), 'Clientes') }}</li>
                 <li>{{ HTML::link(route('prospectoList'), 'Prospectos') }}</li>
+
                 <!-- <li>{{ HTML::link('boletin', 'Boletin') }}</li> -->
-            </li>
+            <!-- </li> -->
            <!--  <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuración<strong class="caret"></strong></a>
                 <ul class="dropdown-menu">
@@ -36,6 +37,10 @@
             </li> -->
             <li>{{ HTML::link(route('carros'), 'Carros') }}</li>
             <li>{{ HTML::link(route('extra'), 'Extras / Servicios') }}</li>
+              @if(Auth::user()->empresa->id == 1)
+                    <li>{{HTML::link(route('marcas'), 'Marcas')}}</li>
+                    <li>{{HTML::link(route('modelos'), 'Modelos')}}</li>
+                @endif  
         </ul>
         <form class="navbar-form navbar-left" role="search"  ng-controller='searchController'>
           <div class="form-group">

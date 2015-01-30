@@ -17,10 +17,18 @@
                     <div class="col-md-12 col-sm-12">
                         {{ Form::model($tipo, $form_data) }}
                             <div class="form-group">
-                                {{ Form::label('tipo', 'Tipo *', array('class' => 'control-label col-md-4 col-sm-4')) }}
+                                {{ Form::label('marca_id', 'Marca *', array('class' => 'control-label col-md-4 col-sm-4')) }}
                                 <div class="col-md-7 col-sm-7 input-group">
                                     <span class="input-group-addon glyphicon glyphicon-record"> </span>
-                                    {{ Form::text('tipo', null, array('placeholder' => 'Tipo', 'class' => 'form-control')) }}
+                                    {{ Form::select('marca_id', $marcas, null, array('placeholder' => 'Tipo', 'class' => 'form-control')) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                {{ Form::label('nombre', 'Modelo *', array('class' => 'control-label col-md-4 col-sm-4')) }}
+                                <div class="col-md-7 col-sm-7 input-group">
+                                    <span class="input-group-addon glyphicon glyphicon-record"> </span>
+                                    {{ Form::text('nombre', null, array('placeholder' => 'Tipo', 'class' => 'form-control')) }}
                                 </div>
                             </div>
                             {{ Form::hidden('tipo_id', null, array('id' => 'tipo_id')) }}

@@ -37,6 +37,16 @@
                             @endif
                         </div>
                     </div>
+                    <div class="form-group">
+                        {{ Form::label('direccion_2', 'Dirección Extranjero', array('class' => 'control-label col-md-4 col-sm-4')) }}
+                        <div class="col-md-7 col-sm-7 input-group">
+                            <span class="input-group-addon glyphicon glyphicon-home"> </span>
+                            {{ Form::textarea('direccion_2', null, array('placeholder' => 'Dirección Local', 'rows' => '3', 'class' => 'form-control')) }}
+                            @if($errors->has('direccion_2') )
+                                <span class="input-group-addon glyphicon glyphicon-remove alert-danger"> </span>
+                            @endif
+                        </div>
+                    </div>
                   <!--   <div class="form-group">
                         {{ Form::label('direccion_2', 'Dirección 2', array('class' => 'control-label col-md-4 col-sm-4')) }}
                         <div class="col-md-7 col-sm-7 input-group">

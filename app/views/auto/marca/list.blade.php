@@ -75,7 +75,7 @@
 
                         <td>
 
-                            <a href="{{ route('marcaShow', array($marcas->id)) }}">{{ $marcas->nombre }}</a></td>
+                           {{ $marcas->nombre }}
 
                         <td></td>
 

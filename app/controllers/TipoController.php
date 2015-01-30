@@ -3,39 +3,18 @@
 	class TipoController extends BaseController
 
     {
+        public function lista(){
 
-        /**
-
-         * [Tabla de Tipos]
-
-         * @return [vista] [auto/tipo/list]
-
-         */
-
-        public function lista()
-
-        {
-
-            $tipo = Tipo::orderBy('created_at','dsc')
-
-                ->paginate();
-
-
-
+            $tipo = Modelo::orderBy('id','dsc')               ->paginate();
             $form_data = [
-
                 'class' => 'form-horizontal',
-
                 'id' => 'formTipo'
-
             ];
 
-
-
             $mensaje = 'El campo no tiene que quedar vacío';
+            $marcas  = Marca::lists('nombre', 'id');
 
-            return View::make('auto.tipo.list', compact('tipo','form_data','mensaje'));
-
+            return View::make('auto.tipo.list', compact('tipo','form_data','mensaje', 'marcas'));
         }
 
         /**
@@ -50,7 +29,7 @@
 
         {
 
-            $tipo = new Tipo;
+            $tipo = new Modelo;
 
             $data = Input::all();
 
@@ -58,9 +37,7 @@
 
             if($tipo->validAndSave($data)) {
 
-                $bitacora = new Bitacora;
-
-                $bitacora->Guardar(5,$tipo->id,1);
+              
 
                 return Redirect::back()
 
@@ -92,7 +69,7 @@
 
         {
 
-            $tipo = Tipo::find($id);
+            $tipo = Modelo::find($id);
 
 
 
@@ -120,7 +97,7 @@
 
         {
 
-            $tipo = Tipo::find($id);
+            $tipo = Modelo::find($id);
 
 
 
@@ -136,10 +113,7 @@
 
             if($tipo->validAndSave($data)) {
 
-                $bitacora = new Bitacora;
-
-                $bitacora->Guardar(5,$tipo->id,2);
-
+              
                 return Redirect::back()
 
                     ->with('mensaje','El Tipo ha sido editada con éxito')

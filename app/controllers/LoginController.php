@@ -42,10 +42,11 @@ class LoginController extends BaseController
 
 
 
-    	if(Auth::attempt($userdata, Input::get('remember-me', false)))
-
-            return Redirect::to('/');
-
+    	if(Auth::attempt($userdata, Input::get('rememberme', false))){
+            if(Auth::user()->tipo == 'Cliente')
+                return Redirect::to('/');
+            return Redirect::to('admin');
+        }
         else
 
             return Redirect::back()

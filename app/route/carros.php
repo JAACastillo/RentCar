@@ -32,7 +32,7 @@ Route::post('carro/mantenimiento/save', ['as' => 'mantoSave',	'uses' => 'CarroCo
 //AngularJs get mantenimientos // http://localhost:8000/admin/carro/6/mantenimientos/5
 
 Route::get('carro/{id}/mantenimientos/{idd}', function($idCarro, $id){
-	$mantos = mantenimiento::with('tipo')->where('placa_id', $id)->get();
+	$mantos = mantenimiento::with('tipo')->where('placa_id', $id)->orderBy("fecha","desc")->get();
 	return Response::json($mantos, 200);
 });
 

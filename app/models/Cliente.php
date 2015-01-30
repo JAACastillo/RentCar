@@ -16,6 +16,7 @@ class Cliente extends Eloquent
         'telefono',
         'celular',
         'telefonoExtranjero',
+        'direccion_2',
         'como'
     ];
 

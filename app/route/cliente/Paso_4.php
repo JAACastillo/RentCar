@@ -9,8 +9,8 @@
     Route::get('cliente/{id}/editar',           ['as' => 'editarDocumento', 'uses' => 'clientePaso_4Controller@editDocumento']);
     Route::patch('cliente/{id}/informacion',    ['as' => 'guardarDocumento', 'uses' => 'clientePaso_4Controller@updateDocumento']);
     
-    Route::get('cliente/{id}/show/',            ['as' => 'clienteShow',  'uses' => 'clientePaso_1Controller@show'  ]);
-
+    Route::get('cliente/{id}/show/',            ['as' => 'clienteShow',  			'uses' => 'clientePaso_1Controller@show'  ]);
+    Route::get('cliente/documento/{id}',		['as' => 'clienteDocumentoImagen',	'uses' => 'clientePaso_4Controller@mostrarImagen' ]);
 
 
 

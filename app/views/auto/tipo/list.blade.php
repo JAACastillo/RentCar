@@ -6,7 +6,7 @@
 
     <div class="col-md-12">
 
-        <h1 class='text-center'>Tipos de Auto</h1>
+        <h1 class='text-center'>Modelos de carros</h1>
 
     </div>
 
@@ -60,7 +60,7 @@
 
                 <tr class="active">
 
-                    <th>Tipo</th>
+                    <th>Marca</th>
 
                     <th>Modelo</th>
 
@@ -71,8 +71,8 @@
                 @foreach ($tipo as $tipos)
 
                     <tr>
-                        <td>{{ $tipos->tipo }}</td>
-                        <td>{{ $tipos->modelos->count() }}</td>
+                        <td>{{ $tipos->marca->nombre }}</td>
+                        <td> {{$tipos->nombre}}</td>
                         <td>
                             <a href="{{ route('tipoEditar', array($tipos->id)) }}" data-content="Editar" data-placement="bottom" class="crearTipo glyphicon glyphicon-edit tool"> </a>
                         </td>

@@ -3,7 +3,7 @@
      * [Tabla de Tipos]
      * @return [vista] [auto/tipo/list]
      */
-	Route::get('tipo/',[
+	Route::get('tipo/',[ 'as' => 'modelos',
 		'uses' => 'TipoController@lista'
 	]);
     /**

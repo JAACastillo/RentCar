@@ -75,6 +75,10 @@ class clientePaso_4Controller extends BaseController
     }
 
 
+    public function mostrarImagen($nombre){
+        return  View::make('imagen', compact('nombre'));
+    }
+
 
 
 

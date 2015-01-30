@@ -74,7 +74,9 @@
                         </tr>           
                         <tr ng-repeat='mantenimiento in mantenimientos'>
                             <td>
-                                @{{mantenimiento.tipo.nombre}}
+                                <a href="" ng-click="details(mantenimiento)" data-toggle="modal" data-target="#myModal">
+                                    @{{mantenimiento.tipo.nombre}}
+                                </a>
                             </td>
                             <td>
                                 @{{mantenimiento.fecha}}
@@ -94,10 +96,11 @@
 
     </div>
 
+@include('modal')
+
 </div>
 
 <br/>
-
 
 
 

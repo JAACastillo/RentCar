@@ -86,6 +86,7 @@
                         <td>Tipo</td>
                         <td>Número</td>
                         <td>Vencimiento</td>
+                        <td>Imagen</td>
                         <td>Opcion</td>
                     </tr>
                     @foreach($documentos as $documento)
@@ -93,7 +94,12 @@
                             <td>{{$documento->tipo->tipo}}</td>
                             <td>{{$documento->numero}}</td>
                             <td>{{$documento->vencimiento}}</td>
-                            <td>{{$documento->imagen}}</td>
+                            <td>    
+                                <a href="{{route('clienteDocumentoImagen', $documento->imagen)}}" target="_blank">
+                                    Ver imagen 
+                                    <span class="glyphicon glyphicon-share"></span>
+
+                                </a></td>
                             <td>
                                 <a href="{{ route('editarDocumento', $documento->id) }}" data-content="Editar"  class="glyphicon glyphicon-edit tool pull-left"> </a>
                             </td>

@@ -83,14 +83,16 @@ class EmpresaController extends BaseController{
 
 
 	private function crearUsuario($empresa){
-		$usuario = User::where('email', $empresa->email)->get();
-		if(count($usuario) == 0){
+		$usuario = User::where('email', $empresa->email)->first();
+		if(count($usuario) == 0)
 			$usuario = new User;
-			$usuario->nombre 		= $empresa->nombre;
-			$usuario->email 		= $empresa->email;
-			$usuario->password 		= Hash::make(strtolower($empresa->email));
-			$usuario->empresa_id	= $empresa->id;
-		}
+		$usuario->nombre 		= $empresa->nombre;
+		$usuario->email 		= $empresa->email;
+		$usuario->tipo 			= "Administrador";
+		$usuario->password 		= Hash::make(strtolower($empresa->email));
+		$usuario->empresa_id	= $empresa->id;
+		$usuario->save();
+		
 	}
 
 

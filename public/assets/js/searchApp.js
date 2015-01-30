@@ -50,6 +50,11 @@ var app = angular.module('search', ['ui.bootstrap', 'chart.js'])
             )
         }
     }
+
+    $scope.details = function (mantenimiento){
+    	// $log.info(index);
+    	$scope.detalles = mantenimiento;//$scope.mantenimientos[index];
+    }
 }])
 .factory('factory', ['$q', '$http', '$log', function($q, $http, $log){
     function all(id, url){
