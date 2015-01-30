@@ -8,8 +8,8 @@
         <div class="row" style="border-bottom: 1px inset #DDDDDD">
             <dl class="horizontal">
                 <div class="col-md-3 text-center">
-                    <h2>{{$carro->modelo->marca->nombre}}</h2>
-                    <h5>{{$carro->modelo->nombre}}</h5>
+                    <h2>{{$carro->marca}}</h2>
+                    <h5>{{$carro->modelo}}</h5>
                 </div>
                 <div class="col-md-3 col-sm-3 ">
                     <dd class='text-justify'><span class="glyphicon glyphicon-time"> </span> {{ Form::label('Año: ' . $carro->ano) }}</dd>
@@ -19,10 +19,9 @@
                 </div>
 
                 <div class="col-md-3 col-sm-3">
-                    <dd class='text-justify'><span class="glyphicon glyphicon-tint"> </span> {{ Form::label('Color: ' . $carro->color->color) }}</dd>
                     <dd class='text-justify'><span class="glyphicon glyphicon-record"> </span> {{ Form::label($carro->capacidad . ' Pasajeros') }}</dd>
                     <dd class='text-justify'><span class="glyphicon glyphicon-road"> </span> {{ Form::label($carro->kmGalon . ' Km/g') }}</dd>
-                    <dd class='text-justify'><span class="glyphicon glyphicon-tint"> </span> {{ Form::label('Combustible: ' . $carro->combustible->nombre) }}</dd>
+                    <dd class='text-justify'><span class="glyphicon glyphicon-tint"> </span> {{ Form::label('Combustible: ' . $carro->combustible) }}</dd>
                     <dd class='text-justify'><span class="glyphicon glyphicon-briefcase"> </span> {{ Form::label('Equipamiento: ' . $carro->equipamiento) }}</dd>
                 </div>
 

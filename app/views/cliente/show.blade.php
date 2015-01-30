@@ -26,12 +26,12 @@
                 <dd class="text-left">{{ Form::label($cliente->direccion) }}</dd>
             </p>
             <p>
-                <dt class="text-left">{{ Form::label('Dirección Extrangero:') }}</dt>
+                <dt class="text-left">{{ Form::label('Dirección Extranjero:') }}</dt>
                 <dd class="text-left">{{ Form::label($cliente->direccion_2) }}</dd>
             </p>
             <p>
                 <dt class="text-left">{{ Form::label('Documento Identidad:') }}</dt>
-                <dd class="text-left">{{ Form::label($cliente->doc_unico) }}</dd>
+                <dd class="text-left">{{ Form::label($cliente['Documento']) }}</dd>
             </p>
             <p>
                 <dt class="text-left">{{ Form::label('Sexo:') }}</dt>
@@ -43,14 +43,14 @@
             </p>
             <p>
                 <dt class="text-left">{{ Form::label('Fecha Nacimiento:') }}</dt>
-                <dd class="text-left">{{ Form::label($cliente->fecha_nac) }}</dd>
+                <dd class="text-left">{{ Form::label($cliente->fechaNacimiento) }}</dd>
             </p>
             <p>
                 <dt class="text-left">{{ Form::label('Teléfono Local:') }}</dt>
                 <dd class="text-left">{{ Form::label($cliente->telefono) }}</dd>
             </p>
             <p>
-                <dt class="text-left">{{ Form::label('Teléfono Extrangero:') }}</dt>
+                <dt class="text-left">{{ Form::label('Teléfono Extranjero:') }}</dt>
                 <dd class="text-left">{{ Form::label($cliente->telefono_2) }}</dd>
             </p>
             <p>
@@ -63,28 +63,28 @@
         <dl class="dl-horizontal">
             <p>
                 <dt class="text-left">{{ Form::label('Pasaporte:') }}</dt>
-                <dd class="text-left">{{ Form::label($cliente->pasaporte) }}</dd>
+                <dd class="text-left">{{ Form::label($cliente['Pasaporte']) }}</dd>
             </p>
             <p>
                 <dt class="text-left">{{ Form::label('Número Licencia:') }}</dt>
-                <dd class="text-left">{{ Form::label($cliente->licencia) }}</dd>
+                <dd class="text-left">{{ Form::label($cliente['Licencia']) }}</dd>
             </p>
             <p>
                 <dt class="text-left">{{ Form::label('Fecha Emi. Licencia:') }}</dt>
-                <dd class="text-left">{{ Form::label($cliente->fecha_emi_lic) }}</dd>
+                <dd class="text-left">{{ Form::label($cliente['LicenciaEmision']) }}</dd>
             </p>
             <p>
                 <dt class="text-left">{{ Form::label('Fecha Ven. Licencia:') }}</dt>
-                <dd class="text-left">{{ Form::label($cliente->fecha_ven_lic) }}</dd>
+                <dd class="text-left">{{ Form::label($cliente['LicenciaVencimiento']) }}</dd>
             </p>
-            <p>
+           <!--  <p>
                 <dt class="text-left">{{ Form::label('Tarjeta de Crédito:') }}</dt>
                 <dd class="text-left">{{ Form::label($cliente->targeta_credito) }}</dd>
             </p>
             <p>
                 <dt class="text-left">{{ Form::label('Fecha Ven. Tarj-Cred:') }}</dt>
                 <dd class="text-left">{{ Form::label($cliente->fecha_ven_cre) }}</dd>
-            </p>
+            </p> -->
             <p>
                 <dt class="text-left">{{ Form::label('Tipo Cliente:') }}</dt>
                 <dd class="text-left">{{ Form::label($cliente->tipo) }}</dd>
@@ -126,7 +126,7 @@
                     </p>
                     <p>
                         <dt class="text-left">Licencia: </dt>
-                        <dd class="text-left">{{ Form::label($cliente->conductor_femilic) }}</dd>
+                        <dd class="text-left">{{ Form::label($cliente->conductor['Licencia']) }}</dd>
                     </p>
                 </div>
             @endif

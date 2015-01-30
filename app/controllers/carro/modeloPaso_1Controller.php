@@ -209,8 +209,6 @@ class modeloPaso_1Controller extends BaseController
 
         $modelo = Modelo::find($id);
 
-
-
         if(is_null($modelo))
 
             App::abort(404);

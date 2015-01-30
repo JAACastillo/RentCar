@@ -119,7 +119,7 @@ class rentaController extends BaseController{
                                 ->where('fechaFin', '>=', $prestamo->fechaFin)
                                 ->groupBy('id')
                                 ->orderBy('precio', 'asc')
-                                ->paginate(2);
+                                ->paginate(8);
         return Response::json($carros, 200);
     }
 

@@ -8,8 +8,7 @@ class clientePaso_1Controller extends BaseController
     public function lista()
     {
         $cliente = Cliente::where('empresa_id', Auth::user()->empresa->id)
-                            ->where('tipo', 'local')
-                            ->orWhere('tipo', 'extrangero')
+                            ->where('como', 'cliente')
                             ->orderBy('created_at','dsc')
                             ->paginate();
 
@@ -107,7 +106,7 @@ class clientePaso_1Controller extends BaseController
 
         $data = Input::all();
 
-        if($cliente->validarCliente($data)) {
+        if($cliente->validarCliente($data)) { 
             return Redirect::route('clienteContacto',$cliente->id);
         } else
             return Redirect::back()
@@ -126,13 +125,28 @@ class clientePaso_1Controller extends BaseController
         if(is_null($cliente))
             App::abort(404);
 
-        $cliente = $cliente->fechaDmy($cliente);
+        // $cliente = $cliente->fechaDmy($cliente);
 
+     
+     
+        $this->datosCliente($cliente, array('Pasaporte', 'Licencia', 'Tarjeta', 'Documento'));
        
         $prestamos = Prestamo::where('cliente_id',$id)
             ->orderBy('fechaReserva','dsc')
             ->paginate();
 
         return View::make('cliente/show', compact('cliente','prestamos'));
+    }
+
+     private function datosCliente(&$cliente, $documentos){
+      foreach ($documentos as $documento) {
+        $doc = $cliente->datosDocumento($documento);
+        if($doc){
+          $cliente[$documento]                  = $doc->numero;
+          $cliente[$documento . 'Emision']      = $doc->emision;
+          $cliente[$documento . 'Vencimiento']  = $doc->vencimiento;
+        }
+      }
+      return $cliente;
     }
 }

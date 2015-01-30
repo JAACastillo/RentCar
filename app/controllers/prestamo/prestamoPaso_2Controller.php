@@ -14,21 +14,27 @@ class prestamoPaso_2Controller extends BaseController
     }
 
     public function jsonCarros($fechaInicio, $fechaFin, $empresaID){
-        $carros = carro::orderBy('created_at','dsc')
-                        ->with('color', 'combustible', 'modelo','modelo.marca', 'tipo')
-                        ->where('empresa_id', $empresaID)
-                        ->paginate(5);
-        foreach ($carros as $carro) {
-            $precios = $carro->precios()
-                            ->where('fechaInicio', '<=', $fechaInicio)
-                            ->where('fechaFin', '>=', $fechaFin)
-                            ->orderBy('cantidad', 'DESC')
-                            ->get();
-            if(count($precios) > 0)
-                $carro->precio = $precios[0]->cantidad;
-            else
-                $carro->precio = "NTN";
-        }
+        // $carros = carro::orderBy('created_at','dsc')
+        //                 ->with('color', 'combustible', 'modelo','modelo.marca', 'tipo')
+        //                 ->where('empresa_id', $empresaID)
+        //                 ->paginate(5);
+        // foreach ($carros as $carro) {
+        //     $precios = $carro->precios()
+        //                     ->where('fechaInicio', '<=', $fechaInicio)
+        //                     ->where('fechaFin', '>=', $fechaFin)
+        //                     ->orderBy('cantidad', 'DESC')
+        //                     ->get();
+        //     if(count($precios) > 0)
+        //         $carro->precio = $precios[0]->cantidad;
+        //     else
+        //         $carro->precio = "NTN";
+        // }
+
+         $carros = detalleCarro::where('fechaInicio', '<=', $fechaInicio)
+                                ->where('fechaFin', '>=', $fechaFin)
+                                ->groupBy('id')
+                                ->orderBy('precio', 'asc')
+                                ->paginate();
         return $carros;
     }
 
