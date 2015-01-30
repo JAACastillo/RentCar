@@ -9,6 +9,8 @@ class clientePaso_1Controller extends BaseController
     {
         $cliente = Cliente::where('empresa_id', Auth::user()->empresa->id)
                             ->where('como', 'cliente')
+                            ->where('tipo', '!=', 'Emergencia')
+                            ->where('tipo', '!=', 'adicional')
                             ->orderBy('created_at','dsc')
                             ->paginate();
 

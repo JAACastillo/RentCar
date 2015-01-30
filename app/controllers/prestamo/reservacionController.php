@@ -66,6 +66,8 @@ class reservacionController extends BaseController
             App::abort(404);
 
         $data = Input::all();
+
+        // return $data;
         if($prestamo->validarPrestamo($data,1)) {
             return Redirect::route('selectModelo', $prestamo->id);//route('selectModelo',$prestamo->id);
 
