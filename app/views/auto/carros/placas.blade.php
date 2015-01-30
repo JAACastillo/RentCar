@@ -44,6 +44,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                       {{ Form::label('color', 'Color', array('class' => 'control-label col-md-4 col-sm-4')) }}
+                       <div class="col-md-7 col-sm-7 input-group">
+                           <span class="input-group-addon glyphicon glyphicon-tint"> </span>
+                           {{ Form::select('color_id', $colores, null,  array('class' => 'form-control')) }}
+                           @if($errors->has('color_id') )
+                               <span class="input-group-addon glyphicon glyphicon-remove alert-danger"> </span>
+                           @endif
+                       </div>
+                   </div>   
 
                 <div class="panel-footer text-center">
 
@@ -61,6 +71,7 @@
                 <table class="table">
                     <tr>
                         <td>Número</td>
+                        <td>Color</td>
                         <td>Proveedor</td>
                         <td>Kilometraje</td>
                         <td>Opcion</td>
@@ -68,6 +79,7 @@
                     @foreach($placas as $placa)
                         <tr>
                             <td>{{$placa->numero}}</td>
+                            <td>{{$placa->color->color}}</td>
                             <td>{{$placa->proveedor}}</td>
                             <td>{{$placa->kilometraje}}</td>
                             <td>

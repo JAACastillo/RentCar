@@ -17,7 +17,8 @@ class PlacasController extends BaseController{
 		$paso = 2;
 		$form = new Formulario;
 		$formData = $form->formData($url, $metodo, false);
-		return View::make('auto.carros.placas', compact('placa', 'placas', 'formData', 'paso', 'carro'));
+		$colores = Color::lists('color', 'id');
+		return View::make('auto.carros.placas', compact('placa', 'placas', 'formData', 'paso', 'carro', "colores"));
 	}
 	private function save($placa, $id){
 		$data = Input::all();

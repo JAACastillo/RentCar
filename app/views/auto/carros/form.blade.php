@@ -80,16 +80,7 @@
                            @endif
                        </div>
                    </div>
-                   <div class="form-group">
-                       {{ Form::label('color', 'Color', array('class' => 'control-label col-md-4 col-sm-4')) }}
-                       <div class="col-md-7 col-sm-7 input-group">
-                           <span class="input-group-addon glyphicon glyphicon-tint"> </span>
-                           {{ Form::select('color_id', $colores, null,  array('class' => 'form-control')) }}
-                           @if($errors->has('color_id') )
-                               <span class="input-group-addon glyphicon glyphicon-remove alert-danger"> </span>
-                           @endif
-                       </div>
-                   </div>   
+                   
                     <div class="form-group">
                         {{ Form::label('imagen', 'Imagen *', array('class' => 'control-label col-md-4 col-sm-4')) }}
                         <div class="col-md-7 col-sm-7 input-group">

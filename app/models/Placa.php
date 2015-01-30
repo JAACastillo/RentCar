@@ -1,7 +1,7 @@
 <?php
 
 class Placa extends Eloquent{
-	protected $fillable = ['numero', 'carro_id', 'kilometraje', 'proveedor'];
+	protected $fillable = ['numero', 'carro_id', 'kilometraje', 'proveedor','color_id'];
 	public $timestamps = false;
 
 	
@@ -35,4 +35,7 @@ class Placa extends Eloquent{
 		return $this->belongsTo('carro');
 	}
 
+	public function color(){
+		return $this->belongsTo('Color');
+	}
 }
