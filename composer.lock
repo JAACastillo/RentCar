@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0741b44d05b33dfdb723f8424c2bb1d6",
+    "hash": "a2cc2823ce28f2d273cdc94b4cebc785",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -495,16 +495,16 @@
         },
         {
             "name": "maximebf/debugbar",
-            "version": "v1.10.2",
+            "version": "v1.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "4971283c1fa8da051e97d1fa62e053d49259f7ef"
+                "reference": "060fbaf6a4e2d328dcdb31cc606d2f2ed145104b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/4971283c1fa8da051e97d1fa62e053d49259f7ef",
-                "reference": "4971283c1fa8da051e97d1fa62e053d49259f7ef",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/060fbaf6a4e2d328dcdb31cc606d2f2ed145104b",
+                "reference": "060fbaf6a4e2d328dcdb31cc606d2f2ed145104b",
                 "shasum": ""
             },
             "require": {
@@ -547,7 +547,7 @@
             "keywords": [
                 "debug"
             ],
-            "time": "2014-12-17 08:39:39"
+            "time": "2015-01-30 08:24:55"
         },
         {
             "name": "monolog/monolog",
@@ -1974,12 +1974,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "166ad317a307082d037a6d201ddb602f3295af9a"
+                "reference": "1746ff03c4c7e44a9c882efd1c90d30baa99f7d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/166ad317a307082d037a6d201ddb602f3295af9a",
-                "reference": "166ad317a307082d037a6d201ddb602f3295af9a",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/1746ff03c4c7e44a9c882efd1c90d30baa99f7d4",
+                "reference": "1746ff03c4c7e44a9c882efd1c90d30baa99f7d4",
                 "shasum": ""
             },
             "bin": [
@@ -2010,20 +2010,18 @@
                 "nginx",
                 "php"
             ],
-            "time": "2015-01-19 23:21:04"
+            "time": "2015-01-29 23:14:14"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "heroku/heroku-buildpack-php": 20
     },
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "ext-mbstring": "*"
+    },
+    "platform-dev": []
 }
