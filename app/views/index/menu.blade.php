@@ -62,11 +62,13 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $name }} <strong class="caret"></strong></a>
                 <ul class="dropdown-menu">
-                    <li>{{ HTML::link(route('usuarios'), ' Usuarios', array('class' => 'glyphicon glyphicon-user')) }}</li>
                     <li>{{ HTML::link(route('admin'), ' Inicio', array('class' => 'glyphicon glyphicon-home')) }}</li>
-                    <li class="divider"></li>
-                    <li>{{ HTML::link(route('reportes'), ' Reportes', array('class' => 'glyphicon glyphicon-calendar')) }}</li>
-                    <li>{{ HTML::link(route('empresas'), ' Empresas', array('class' => 'glyphicon fa fa-building')) }}</li>           
+                    @if(Auth::user()->tipo == "Administrador")
+                        <li class="divider"></li>
+                        <li>{{ HTML::link(route('usuarios'), ' Usuarios', array('class' => 'glyphicon glyphicon-user')) }}</li>
+                        <li>{{ HTML::link(route('reportes'), ' Reportes', array('class' => 'glyphicon glyphicon-calendar')) }}</li>
+                        <li>{{ HTML::link(route('empresas'), ' Empresas', array('class' => 'glyphicon fa fa-building')) }}</li>           
+                    @endif
 
                     <li class="divider"></li>
                     <li>{{ HTML::link('/logout', ' Salir', array('class' => 'glyphicon glyphicon-off')) }}</li>
