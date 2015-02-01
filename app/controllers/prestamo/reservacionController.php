@@ -25,7 +25,7 @@ class reservacionController extends BaseController
                                    ->orderBy('created_at','dsc')
                                    ->lists('nombre', 'id');
 
-         $lugares = Lugares::where('empresa_id', Auth::user()->empresa->id)->lists('nombre', 'id');
+         $lugares = Lugares::lists('nombre', 'id');//where('empresa_id', Auth::user()->empresa->id)->lists('nombre', 'id');
 
          $entrega = $lugares; //$prestamo->formLugares();
          $devolucion = $lugares; //$prestamo->formLugares();

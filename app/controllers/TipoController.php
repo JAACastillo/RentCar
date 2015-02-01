@@ -5,7 +5,7 @@
     {
         public function lista(){
 
-            $tipo = Modelo::orderBy('id','dsc')               ->paginate();
+            $tipo = Modelo::orderBy('id','dsc')->paginate();
             $form_data = [
                 'class' => 'form-horizontal',
                 'id' => 'formTipo'
@@ -17,115 +17,34 @@
             return View::make('auto.tipo.list', compact('tipo','form_data','mensaje', 'marcas'));
         }
 
-        /**
-
-         * [Guardar Datos Del Tipo]
-
-         * @return [vista] [auto/tipo/list]
-
-         */
-
-        public function store()
-
-        {
-
+        public function store(){
             $tipo = new Modelo;
-
-            $data = Input::all();
-
-
-
-            if($tipo->validAndSave($data)) {
-
-              
-
-                return Redirect::back()
-
-                    ->with('mensaje','El Tipo ha sido creada con éxito')
-
-                    ->with('clase', 'alert-success');
-
-            } else
-
-                return Redirect::back()
-
-                    ->with('mensaje','El campo no tiene que estar vacío')
-
-                    ->with('clase', 'alert-danger');
-
+            return $this->save($tipo);
         }
 
-        /**
-
-         * [Editar Tipo] [Formulario]
-
-         * @param  [type] $id [ID del Tipo]
-
-         * @return [type]     [JSON]
-
-         */
-
-        public function edit($id)
-
-        {
-
+        public function edit($id){
             $tipo = Modelo::find($id);
-
-
-
             if(!empty($tipo))
-
                 return $tipo;
-
-            else
-
-                return 0;
-
+            return false;
         }
 
-        /**
-
-         * [Actualizar Datos]
-
-         * @param  [type] $id [ID del Tipo]
-
-         * @return [vista] [auto/tipo/list]
-
-         */
-
-        public function update($id)
-
-        {
-
+        public function update($id){
             $tipo = Modelo::find($id);
-
-
-
             if(is_null($tipo))
-
                 App::abort(404);
+            return $this->save($tipo);
+        }
 
-
-
+        private function save($tipo){
             $data = Input::all();
-
-
-
-            if($tipo->validAndSave($data)) {
-
-              
+            if($tipo->validAndSave($data)) {              
                 return Redirect::back()
-
                     ->with('mensaje','El Tipo ha sido editada con éxito')
-
                     ->with('clase', 'alert-success');
-
-            } else
-
-                return Redirect::back()
-
+            }
+            return Redirect::back()
                     ->with('mensaje','El campo no tiene que estar vacío')
-
                     ->with('clase', 'alert-danger');
 
         }

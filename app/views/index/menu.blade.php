@@ -40,6 +40,7 @@
               @if(Auth::user()->empresa->id == 1)
                     <li>{{HTML::link(route('marcas'), 'Marcas')}}</li>
                     <li>{{HTML::link(route('modelos'), 'Modelos')}}</li>
+                    <li>{{HTML::link(route('colores'), 'Colores')}}</li>
                 @endif  
         </ul>
         <form class="navbar-form navbar-left" role="search"  ng-controller='searchController'>

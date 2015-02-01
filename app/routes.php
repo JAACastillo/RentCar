@@ -93,6 +93,7 @@ Route::group(array('before'=>'auth|isAdmin'), function() {
     // });
 
         require __DIR__ . '/route/empresas.php';
+        require __DIR__ . '/route/color.php';
         require __DIR__ . '/route/inicio.php';
 
         require __DIR__ . '/route/usuario.php';
