@@ -37,8 +37,10 @@ class prestamoPaso_3Controller extends BaseController
     }
 
     public function delete($id){
-        $extra = prestamoExtra::find($id);
-        $extra->delete();
+        $extra = prestamoExtra::with('definicion')->find($id);
+        // return $extra->definicion->obligatorio;
+        if(!$extra->definicion->obligatorio)
+            $extra->delete();
         return Redirect::back();
     }
 

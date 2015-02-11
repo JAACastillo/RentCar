@@ -40,7 +40,7 @@
 						{{round($extra->cantidad($prestamo->dias,$prestamo->horas),2)}}
 					</small>
 				</h4>
-				
+				@if(!$extra->definicion->obligatorio)
 				<a href="{{route('extraDelete',$extra->id)}}" style="   position: absolute;
 																	    right: 0px;
 																	    top: 0px;
@@ -52,6 +52,7 @@
 																	    border-bottom-right-radius: 3px;">
 				X
 				</a>
+				@endif
 			</div>
 
 			<?php

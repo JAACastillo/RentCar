@@ -2,10 +2,11 @@
 {{-- Include all compiled plugins (below), or include individual files as needed --}}
 {{ HTML::script('/assets/js/jquery.tools.min.js') }}
 {{ HTML::script('/assets/js/bootstrap.min.js') }}
-{{ HTML::script('/assets/js/bootstrap-datetimepicker.min.js') }}
+
 {{-- HTML::script('/assets/js/jquery-ui.js') --}}
 
 
+{{ HTML::script('/assets/renta/js/vendor/jquery.datetimepicker.js') }}
 
 {{-- HTML::script('/assets/js/select2.min.js') 			--}}
 {{-- HTML::script('/assets/js/select2_locale_es.js') 	--}}

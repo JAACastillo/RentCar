@@ -116,7 +116,9 @@ class Prestamo extends Eloquent
 
     public function total($precioExtras){
         $precio = $this->getTotalCarroAttribute() + $precioExtras;
-        return $precio;
+        // return $precio;
+        if (array_key_exists('descuento', $this->attributes)) 
+            return $precio;
         return round($precio - ($precio * ($this->attributes['descuento'] / 100)),2);
     }
 

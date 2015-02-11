@@ -5,7 +5,7 @@
 </h4>
 <div class="widget-content main-block product-widget-mini"  ng-show="reserva.carro">								
 	<div class="product-img">
-		<img src="http://placehold.it/105x55" alt="" />
+		<img src="{{url('assets/images/carros/' . $prestamo->carro->imagen)}}" alt="" />
 	</div>
 	<div class="product-info">
 		<div class="entry-format">

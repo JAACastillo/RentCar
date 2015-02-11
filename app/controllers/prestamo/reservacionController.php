@@ -42,7 +42,6 @@ class reservacionController extends BaseController
 
         //return date('Y-m-d h:i A', strtotime($data['fechaDevolucion']));
         if($prestamo->validarPrestamo($data)) {
-
             $this->agregarExtras($prestamo);
             return Redirect::route('selectModelo',$prestamo->id);
         }        
@@ -94,6 +93,7 @@ class reservacionController extends BaseController
 
         // return $data;
         if($prestamo->validarPrestamo($data,1)) {
+            // $this->email($prestamo);
             return Redirect::route('selectModelo', $prestamo->id);//route('selectModelo',$prestamo->id);
 
         } 
@@ -116,14 +116,17 @@ class reservacionController extends BaseController
             App::abort(404);
         $prestamo->estado_id = 4;
         $prestamo->save();
-        // Mail::send('emails.reservado', array('prestamo' => $prestamo), function($message) use ($prestamo)
-        // {
-        //     $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Prestamo aprobado ' . $prestamo->carro->modelo->nombre);
-        // });
-
+        $this->email($prestamo);
         return Redirect::route('formaPago',$id);
     }
 
+
+    private function email($prestamo){
+        Mail::send('emails.reservado', array('prestamo' => $prestamo), function($message) use ($prestamo)
+        {
+            $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Prestamo aprobado ' . $prestamo->carro->modelo->nombre);
+        });
+    }
 
     public function requerimiento($id) {
         $prestamo = Prestamo::find($id);

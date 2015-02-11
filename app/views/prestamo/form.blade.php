@@ -36,10 +36,10 @@
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('fechaReserva', 'Reserva *', array('class' => 'control-label col-md-4 col-sm-4')) }}
+                        {{ Form::label('fechaReserva', 'Reserva *', array('id' => 'fechaReserva', 'class' => 'control-label col-md-4 col-sm-4')) }}
                         <div class="col-md-7 col-sm-7 input-group">
                             <span class="input-group-addon glyphicon glyphicon-calendar"> </span>
-                            {{ Form::text('fechaReserva', null, array('placeholder' => 'Fecha / Hora de Reserva', 'class' => 'form-control timepicker')) }}
+                            {{ Form::text('fechaReserva', null, array('placeholder' => 'Fecha / Hora de Reserva', 'class' => 'form-control fechaReserva minDate')) }}
                             @if($errors->has('fechaReserva') )
                                 <span class="input-group-addon glyphicon glyphicon-remove alert-danger"> </span>
                             @endif
@@ -50,7 +50,7 @@
                         {{ Form::label('fechaDevolucion', 'Devolución *', array('class' => 'control-label col-md-4 col-sm-4')) }}
                         <div class="col-md-7 col-sm-7 input-group">
                             <span class="input-group-addon glyphicon glyphicon-time"> </span>
-                            {{ Form::text('fechaDevolucion', null, array('placeholder' => 'Fecha / Hora de Devolución', 'class' => 'form-control timepicker')) }}
+                            {{ Form::text('fechaDevolucion', null, array('id' => 'fechaReserva', 'placeholder' => 'Fecha / Hora de Devolución', 'class' => 'form-control fechaDevolucion maxDate')) }}
                             @if($errors->has('fechaDevolucion') )
                                 <span class="input-group-addon glyphicon glyphicon-remove alert-danger"> </span>
                             @endif

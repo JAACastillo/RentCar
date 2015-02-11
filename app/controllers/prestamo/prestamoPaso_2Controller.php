@@ -45,7 +45,8 @@ class prestamoPaso_2Controller extends BaseController
         if($prestamo->estado_id == 1)
             $prestamo->estado_id = 2;
         $prestamo->save();
-
+        // return $this
+        $this->email($prestamo);
         return Redirect::back();
 
     }
@@ -54,6 +55,12 @@ class prestamoPaso_2Controller extends BaseController
 
 
 
+    private function email($prestamo){
+        Mail::send('emails.reservado', array('prestamo' => $prestamo), function($message) use ($prestamo)
+        {
+            $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Prestamo aprobado ' . $prestamo->carro->modelo->nombre);
+        });
+    }
 
 
 

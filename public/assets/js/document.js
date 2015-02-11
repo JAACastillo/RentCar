@@ -21,40 +21,26 @@ $(document).ready(function(e) {
      * [Formato del Calendario]
      * @type {String}
      */
-    $('.datepicker').datetimepicker({
-        format: "yyyy-mm-dd",
-        pickerPosition: "top-left",
-        language: "es",
-        todayBtn: "linked",
-        todayHighlight: true,
-        autoclose: true,
-        minView: 2
-    });
-    /**
-     * [Fecha Emisión y Vencimiento de Licencia] [Cliente]
-     * @type {[type]}
-     */
-    $('#fecha_emi_lic').rangoFechas({
-        maxDate:'#fecha_ven_lic'
-    });
-    /**
-     * [Fecha Emisión y Vencimiento de Licencia] [Caso de Emergencia] [Cliente]
-     * @type {[type]}
-     */
-    $('#adicional_femilic').rangoFechas({
-        maxDate:'#adicional_fevenlic'
-    });
-    /**
-     * [Fecha de Precios] [Modelo] [Paso 3]
-     * @type {[type]}
-     */
-    $('#fechaInicio').rangoFechas({
-        maxDate:'#fecha_fin'
-    });
-    /**
-     * [Input File]
-     * @type {Boolean}
-     */
+    
+    jQuery('.fechaReserva').datetimepicker({
+      format:'d-m-Y H:i',
+      onShow:function( ct ){
+       this.setOptions({
+        maxDate:jQuery('.fechaDevolucion').val()?jQuery('.fechaDevolucion').val():false
+       })
+      },
+      // hour12: true
+      // timepicker:false
+     });
+     jQuery('.fechaDevolucion').datetimepicker({
+      format:'d-m-Y H:i',
+      onShow:function( ct ){
+       this.setOptions({
+        minDate:jQuery('.fechaReserva').val()?jQuery('.fechaReserva').val():false
+       })
+      },
+      // timepicker:false
+     });
     $("#imagen").fileinput({
         showUpload: false,
         showCaption: false
@@ -168,14 +154,8 @@ $(document).ready(function(e) {
         autoclose: true,
         showMeridian: true
     });
-    /**
-     * [Horario de Reserva y Horario de Devolución] [Formulario] [Prestamo] [Paso 1]
-     * @type {[type]}
-     */
-    $('#fechaReserva').datetimepicker('setStartDate', new Date());
-    $('#fechaDevolucion').change(function() {
-        $('#horario_dvl').datetimepicker('setStartDate', $(this).val());
-    });
+    
+
     /**
      * [Formulario] [Prestamo] [Paso 1]
      * @type {[type]}

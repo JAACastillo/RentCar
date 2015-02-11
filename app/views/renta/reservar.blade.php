@@ -11,7 +11,7 @@
 		<div class="form-block drop-off">
 			<h4>¿Hasta qué fecha necesita el vehículo?</h4>
 			{{ Form::text('fechaDevolucion', null, array('placeholder' => 'Fecha de Devolución', 'style' => 'width:140px', 'class' => 'datepicker maxDate', 'id' => 'fechaDevolucion', 'ng-model' => 'reserva.fechaDevolucion')) }}
-		</div>
+		</div> 
 		<br/><br/><br/><br/><br/><br/>
 		<div class="form-block type-lugar">
 			<h4>¿Donde desea que le entreguemos el vehículo?</h4>

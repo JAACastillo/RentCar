@@ -13,4 +13,7 @@
 
 
 
+{{HTML::style('/assets/renta/css/calendar/jquery.datetimepicker.css')}}
+
+
 {{ HTML::style('/assets/css/calendar.min.css', array('media' => 'screen')) }}
