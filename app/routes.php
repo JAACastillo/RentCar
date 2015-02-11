@@ -10,7 +10,12 @@
 |
 */
 
-Route::group(array('prefix' => '/'), function(){
+
+Route::get('/', function(){
+    return View::make('home.index');
+});
+
+Route::group(array('prefix' => '/renta'), function(){
     require __DIR__ . '/route/renta.php';
 });
 

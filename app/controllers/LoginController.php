@@ -13,11 +13,9 @@ class LoginController extends BaseController
 
     {
 
-        if(Auth::check())
-
-            return Redirect::to('/');
-
-        else
+        // if(Auth::check())
+        //     return Redirect::to('/');
+        // else
 
             return View::make('login');
 
@@ -70,7 +68,7 @@ class LoginController extends BaseController
 
 
 
-        return Redirect::route('home')
+        return Redirect::to('login')
 
             ->with('mensaje_info','Tu sesión ha sido cerrada.')
 

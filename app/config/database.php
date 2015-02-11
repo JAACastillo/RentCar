@@ -9,12 +9,12 @@
 	$database = substr($url["path"], 1);
 	
 
-	// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+		// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-	// $host = "localhost";
-	// $username = "root";
-	// $password = "";
-	// $database = "carros";
+		// $host = "localhost";
+		// $username = "root";
+		// $password = "";
+		// $database = "carros";
 	
 	
 return array(
