@@ -50,8 +50,7 @@ class ExtraController extends \BaseController {
         $file = Input::file('imagen');
 
         if(Input::file('imagen')) {
-        	$data['imagen'] = Input::file('imagen')->getClientOriginalName();
-        	$file->move("assets/img",$data['imagen']);
+        	$data['imagen'] = $this->saveLogo();
         } elseif($extra->exists)
         	$data['imagen'] = $extra->imagen;
         else
@@ -69,6 +68,34 @@ class ExtraController extends \BaseController {
             return Redirect::back()
                 ->withInput()
                 ->withErrors($extra->errors);
+	}
+
+
+	private function saveLogo(){
+		try {
+				$s3 = S3Client::factory(
+						array(
+								'driver' => 's3',
+								'key'    => getenv('S3_KEY'),
+								'secret' => getenv('S3_SECRET'),
+								// 'region' => 'US Standard',
+								'bucket' => getenv('S3_BUCKET')
+							)
+					);
+				$file = Input::file('imagen');
+				$filename = $file->getClientOriginalName();
+				$destinationPath = 'imagenes/';
+				$file->move($destinationPath, $filename);
+				// $this->file->put('carros/' . $filename, \File::get($destinationPath . $filename));
+			    $s3->upload('carros', 'extras/' . $filename, \File::get($destinationPath . $filename));
+
+				\File::delete($destinationPath . $filename);
+			    // $resource = fopen('/path/to/file', 'r');
+			} catch (S3Exception $e) {
+			    // echo "There was an error uploading the file.\n";
+			    return "";
+			}
+			return $filename;
 	}
 
 	public function update($id)

@@ -18,7 +18,7 @@
                 <ul class="dropdown-menu">
                    
                 </ul> -->
-                <li><img class="img-responsive" alt="600x300" src="{{url('assets/images/logos/' . Auth::user()->empresa->logo)}}" width="100px" height="30px"></li>
+                <li><img class="img-responsive" alt="600x300" src="{{Auth::user()->empresa->imagen}}" width="100px" height="30px"></li>
                 <li>{{ HTML::link(route('prestamoLista'), 'Prestamos') }}</li>
                 <li>{{ HTML::link(route('clienteLista'), 'Clientes') }}</li>
                 <li>{{ HTML::link(route('prospectoList'), 'Prospectos') }}</li>

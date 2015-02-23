@@ -1,7 +1,17 @@
 <?php
+use Illuminate\Filesystem\Filesystem;
+
+use Aws\S3\S3Client;
+use Aws\S3\Exception\S3Exception;
 
 
 class EmpresaController extends BaseController{
+	protected $file;
+
+	public function __construct(Filesystem $file){
+		$this->file = $file;
+	}
+
 	public function lista(){
 		if(Auth::user()->empresa->id == 1)
 			$empresas = Empresa::all();
@@ -38,13 +48,29 @@ class EmpresaController extends BaseController{
 	
 	private function saveLogo($empresa){
 		if(Input::hasFile('imagen')){
-		// return $data;
-			// $data['data'] = $this->saveCarro();
-			$file = Input::file('imagen');
-			$destinationPath = 'assets/images/logos/';
-			$filename = $file->getClientOriginalName();
-			$file->move($destinationPath, $filename);
+		try {
+				$s3 = S3Client::factory(
+						array(
+								'driver' => 's3',
+								'key'    => getenv('S3_KEY'),
+								'secret' => getenv('S3_SECRET'),
+								// 'region' => 'US Standard',
+								'bucket' => getenv('S3_BUCKET')
+							)
+					);
+				$file = Input::file('imagen');
+				$filename = $file->getClientOriginalName();
+				$destinationPath = 'imagenes/';
+				$file->move($destinationPath, $filename);
+				// $this->file->put('carros/' . $filename, \File::get($destinationPath . $filename));
+			    $s3->upload('carros', 'logos/' . $filename, \File::get($destinationPath . $filename));
 
+				\File::delete($destinationPath . $filename);
+			    // $resource = fopen('/path/to/file', 'r');
+			} catch (S3Exception $e) {
+			    // echo "There was an error uploading the file.\n";
+			    return "";
+			}
 			return $filename;
 		}
 		return $empresa->logo;

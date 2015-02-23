@@ -39,4 +39,8 @@ class Empresa extends Eloquent {
         return false;
     }
 
+    public function getImagenAttribute(){
+        return ('https://s3.amazonaws.com/carros/logos/' . $this->attributes['logo']);
+    }
+
 }

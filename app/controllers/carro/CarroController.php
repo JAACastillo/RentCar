@@ -99,22 +99,9 @@ class CarroController extends BaseController {
 				$filename = $file->getClientOriginalName();
 				$destinationPath = 'imagenes/';
 				$file->move($destinationPath, $filename);
-				// $this->file->put('carros/' . $filename, \File::get($destinationPath . $filename));
 			    $s3->upload('carros', 'carros/' . $filename, \File::get($destinationPath . $filename));
-
-			    // $s3->putObject(array(
-			    //        'Bucket' => 'carros',
-			    //        'Key'    => '',
-			    //        // 'Secret'	=> '23MUXo6Y3o7FtfftFHYm2AoHmCFdAzH0WlI2NhLm',
-			    //        'Body'   =>  \File::get($destinationPath . $filename),
-			    //        'ACL'    => 'public-read',
-			    //    ));
-
-
 				\File::delete($destinationPath . $filename);
-			    // $resource = fopen('/path/to/file', 'r');
 			} catch (S3Exception $e) {
-			    // echo "There was an error uploading the file.\n";
 			    return "";
 			}
 			

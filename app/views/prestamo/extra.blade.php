@@ -8,7 +8,7 @@
     @foreach ($extras as $extra)
         <div class="row" style="border-bottom: 1px inset #DDDDDD">
             <div class="col-md-3 col-sm-3">
-                <img class="img-responsive" src="{{ asset('assets/img/'.$extra->imagen) }}" alt="foto del accesorio" width="80px" />
+                <img class="img-responsive" src="{{ $extra->image) }}" alt="foto del accesorio" width="80px" />
             </div>
             <div class="col-md-2 text-justify">
                 {{ Form::label($extra->nombre) }}

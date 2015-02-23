@@ -50,7 +50,7 @@
                 @foreach ($extra as $extras)
                     <tr class="@if(!$extras->activo) danger @endif">
                         <td>
-                            <img class="img-responsive" src="{{ asset('assets/img/'.$extras->imagen) }}" alt="foto del accesorio" width="40px" />
+                            <img class="img-responsive" src="{{ $extras->image }}" alt="foto del accesorio" width="40px" />
                         </td>
                         <td>
                             <a href="{{ route('extraEdit', array($extras->id)) }}">{{ $extras->nombre }}</a>

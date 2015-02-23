@@ -43,6 +43,10 @@ class Extra extends Eloquent
         return false;
     }
 
+    public function getImageAttribute(){
+        return ('https://s3.amazonaws.com/carros/extras/' . $this->attributes['imagen']);
+
+    }
 
     
 }
