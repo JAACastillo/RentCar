@@ -81,7 +81,7 @@ class clientePaso_4Controller extends BaseController
             $filename = $file->getClientOriginalName();
             $destinationPath = 'imagenes/';
             $file->move($destinationPath, $filename);
-            $s3->upload('carros', 'documentos/' . $filename, \File::get($destinationPath . $filename);
+            $s3->upload('carros', 'documentos/' . $filename, \File::get($destinationPath . $filename));
             \File::delete($destinationPath . $filename);
               // $resource = fopen('/path/to/file', 'r');
           } catch (S3Exception $e) {
