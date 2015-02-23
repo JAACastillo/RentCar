@@ -32,6 +32,7 @@ class prestamoPaso_2Controller extends BaseController
 
          $carros = detalleCarro::where('fechaInicio', '<=', $fechaInicio)
                                 ->where('fechaFin', '>=', $fechaFin)
+                                ->whereEmpresa_id(Auth::user()->empresa_id)
                                 ->groupBy('id')
                                 ->orderBy('precio', 'asc')
                                 ->paginate();
