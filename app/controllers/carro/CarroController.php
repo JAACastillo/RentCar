@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';
 use Illuminate\Filesystem\Filesystem;
 
 use Aws\S3\S3Client;
