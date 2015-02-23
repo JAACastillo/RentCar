@@ -1,6 +1,18 @@
 <?php
 
+use Illuminate\Filesystem\Filesystem;
+
+use Aws\S3\S3Client;
+use Aws\S3\Exception\S3Exception;
+
 class ExtraController extends \BaseController {
+	
+	protected $file;
+
+	public function __construct(Filesystem $file){
+		$this->file = $file;
+	}
+
 
 
 	public function index()
