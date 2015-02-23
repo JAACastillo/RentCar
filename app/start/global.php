@@ -46,26 +46,26 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 |
 */
 
-App::error(function(Exception $exception, $code)
-{
-	switch ($code)
-    {
-        case 405:
-            return Response::view('errors.405', array(), 403);
-        case 406:
-            return Response::view('errors.406', array(), 403);
+// App::error(function(Exception $exception, $code)
+// {
+// 	switch ($code)
+//     {
+//         case 405:
+//             return Response::view('errors.405', array(), 403);
+//         case 406:
+//             return Response::view('errors.406', array(), 403);
 
-        // case 404:
-        //     return Response::view('errors.404', array(), 404);
+//         // case 404:
+//         //     return Response::view('errors.404', array(), 404);
 
-        // case 500:
-        //     return Response::view('errors.500', array(), 500);
+//         // case 500:
+//         //     return Response::view('errors.500', array(), 500);
 
-        default:
-            return Response::view('errors.404', array(), $code);
-    }
-	Log::error($exception);
-});
+//         default:
+//             return Response::view('errors.404', array(), $code);
+//     }
+// 	Log::error($exception);
+// });
 
 /*
 |--------------------------------------------------------------------------
