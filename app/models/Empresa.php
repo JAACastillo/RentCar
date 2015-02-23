@@ -43,4 +43,8 @@ class Empresa extends Eloquent {
         return ('https://s3.amazonaws.com/carros/logos/' . $this->attributes['logo']);
     }
 
+    public function suscripcion(){
+        return $this->hasOne('Suscripcion');
+    }
+
 }

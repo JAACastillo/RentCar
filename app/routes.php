@@ -47,7 +47,7 @@ Route::post('login', 'LoginController@postLogin');
         require __DIR__ . '/route/api.php';
 
     Route::get('logout', ['as' => 'logOut', 'uses' => 'LoginController@logOut']);
-Route::group(array('before'=>'auth|isAdmin'), function() {
+Route::group(array('before'=>'auth|isAdmin|plan'), function() {
      Route::get('cal', function(){
             return View::make('inicio.calendario');
         });

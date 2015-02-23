@@ -70,6 +70,16 @@ Route::filter('guest', function()
 	if (Auth::check()) return Redirect::to('/');
 });
 
+
+Route::filter('plan', function(){
+	if(is_null(Auth::user()->empresa->suscripcion))
+		App::abort(406);
+
+	if(!Auth::user()->empresa->suscripcion->vigente)
+			App::abort(405);
+
+});
+
 /*
 |--------------------------------------------------------------------------
 | CSRF Protection Filter
