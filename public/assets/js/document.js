@@ -24,23 +24,29 @@ $(document).ready(function(e) {
     
     jQuery('.fechaReserva').datetimepicker({
       format:'d-m-Y H:i',
-      onShow:function( ct ){
-       this.setOptions({
-        maxDate:jQuery('.fechaDevolucion').val()?jQuery('.fechaDevolucion').val():false
-       })
-      },
+      // onShow:function( ct ){
+      //  this.setOptions({
+      //   maxDate:jQuery('.fechaDevolucion').val()?jQuery('.fechaDevolucion').val():false
+      //  })
+      // },
       // hour12: true
       // timepicker:false
      });
      jQuery('.fechaDevolucion').datetimepicker({
       format:'d-m-Y H:i',
-      onShow:function( ct ){
-       this.setOptions({
-        minDate:jQuery('.fechaReserva').val()?jQuery('.fechaReserva').val():false
-       })
-      },
+      // onShow:function( ct ){
+      //  this.setOptions({
+      //   minDate:jQuery('.fechaReserva').val()?jQuery('.fechaReserva').val():false
+      //  })
+      // },
       // timepicker:false
      });
+
+     jQuery('.datepicker').datetimepicker({
+      format:'Y-m-d',
+      timepicker:false
+     });
+
     $("#imagen").fileinput({
         showUpload: false,
         showCaption: false

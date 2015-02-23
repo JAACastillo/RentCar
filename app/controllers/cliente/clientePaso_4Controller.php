@@ -20,11 +20,12 @@ class clientePaso_4Controller extends BaseController
     //nuevo paso 4
 
     public function verDocumentos($id){
-        return $this->showInformacion($id, new documento, "POST");
+        return $this->showInformacion($id, new documento, "POST", $id);
     }
 
-    public function showInformacion($id, $documento, $metodo){
-        $cliente = Cliente::find($id);
+    public function showInformacion($clienteID, $documento, $metodo, $id){
+        $cliente = Cliente::find($clienteID);
+        // if($documento->exists)
         $documentos = $cliente->documentos;
         $paso = 4;
         $tipoDocumentos = tipoDocumento::lists('tipo', 'id');
@@ -61,7 +62,7 @@ class clientePaso_4Controller extends BaseController
     public function editDocumento($id){
         $documento = documento::find($id);
         // return $documento->cliente;
-        return $this->showInformacion($documento->id, $documento, "PATCH");
+        return $this->showInformacion($documento->cliente->id, $documento, "PATCH", $documento->id);
     }
 
     private function saveImage($imagen){
