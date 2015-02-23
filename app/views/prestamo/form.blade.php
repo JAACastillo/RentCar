@@ -21,7 +21,7 @@
                     <div class="form-group">
                         {{ Form::label('', '', array('class' => 'control-label col-md-4 col-sm-4')) }}
                         <div class="col-md-7 col-sm-7 input-group">
-                            <input type="checkbox" name="cobroPorHora" value="1"> Cobrar por hora
+                            {{Form::checkbox('cobroPorHora', '1', $prestamo->cobroPorHora)}} Cobrar por hora
                         </div>
                     </div>
                     <div class="form-group">

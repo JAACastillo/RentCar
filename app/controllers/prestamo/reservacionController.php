@@ -38,6 +38,7 @@ class reservacionController extends BaseController
         $data = Input::all();
         $data['empresa_id'] = Auth::user()->empresa->id;
         $data['estado_id'] = 1;
+        
         // $data = $prestamo->fechaYmd($data);
 
         //return date('Y-m-d h:i A', strtotime($data['fechaDevolucion']));
@@ -90,6 +91,8 @@ class reservacionController extends BaseController
             App::abort(404);
 
         $data = Input::all();
+        if (! array_key_exists('cobroPorHora', $data)) 
+            $data['cobroPorHora'] = 0;
 
         // return $data;
         if($prestamo->validarPrestamo($data,1)) {
