@@ -89,10 +89,10 @@ class CarroController extends BaseController {
 				$s3 = S3Client::factory(
 						array(
 								'driver' => 's3',
-								'key'    => env('S3_KEY'),
-								'secret' => env('S3_SECRET'),
+								'key'    => getenv('S3_KEY'),
+								'secret' => getenv('S3_SECRET'),
 								// 'region' => 'US Standard',
-								'bucket' => env('S3_BUCKET')
+								'bucket' => getenv('S3_BUCKET')
 							)
 					);
 				$file = Input::file('imagen');
