@@ -40,6 +40,12 @@ class documento extends Eloquent {
 		return url('imagen') . $this->attributes['imagen'];
 	}
 
+
+	public function getFotoAttribute(){
+		// return $this->attributes['imagen'];
+		return ('https://s3.amazonaws.com/carros/documentos/' . $this->attributes['imagen']);
+	}
+
 	public function tipo(){
 		return $this->belongsTo('tipoDocumento', 'tipoDocumento_id');
 	}

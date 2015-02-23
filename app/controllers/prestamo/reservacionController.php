@@ -122,10 +122,12 @@ class reservacionController extends BaseController
 
 
     private function email($prestamo){
-        Mail::send('emails.reservado', array('prestamo' => $prestamo), function($message) use ($prestamo)
-        {
-            $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Prestamo aprobado ' . $prestamo->carro->modelo->nombre);
-        });
+        if(!empty($prestamo->cliente->email)){
+            Mail::send('emails.reservado', array('prestamo' => $prestamo), function($message) use ($prestamo)
+            {
+                $message->to($prestamo->cliente->email, $prestamo->cliente->nombre)->subject('Prestamo aprobado ' . $prestamo->carro->modelo->nombre);
+            });
+        }
     }
 
     public function requerimiento($id) {

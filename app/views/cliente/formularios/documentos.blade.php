@@ -95,6 +95,7 @@
                             <td>{{$documento->numero}}</td>
                             <td>{{$documento->vencimiento}}</td>
                             <td>    
+                                <!-- <a href="{{$documento->foto}}" target="_blank"> -->
                                 <a href="{{route('clienteDocumentoImagen', $documento->imagen)}}" target="_blank">
                                     Ver imagen 
                                     <span class="glyphicon glyphicon-share"></span>

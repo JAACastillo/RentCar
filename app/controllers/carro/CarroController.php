@@ -1,7 +1,17 @@
 <?php
+require 'vendor/autoload.php';
+use Illuminate\Filesystem\Filesystem;
+
+use Aws\S3\S3Client;
+use Aws\S3\Exception\S3Exception;
 
 class CarroController extends BaseController {
 
+	protected $file;
+
+	public function __construct(Filesystem $file){
+		$this->file = $file;
+	}
 
 	public function index(){
 		$carros = carro::with('tipo','modelo', 'modelo.marca')
@@ -75,13 +85,39 @@ class CarroController extends BaseController {
 
 	private function saveImage($carro){
 		if(Input::hasFile('imagen')){
-		// return $data;
-			// $data['data'] = $this->saveCarro();
-			$file = Input::file('imagen');
-			$destinationPath = 'assets/images/carros/';
-			$filename = $file->getClientOriginalName();
-			$file->move($destinationPath, $filename);
+			try {
+				$s3 = S3Client::factory(
+						array(
+								'driver' => 's3',
+								'key'    => env('S3_KEY'),
+								'secret' => env('S3_SECRET'),
+								// 'region' => 'US Standard',
+								'bucket' => env('S3_BUCKET')
+							)
+					);
+				$file = Input::file('imagen');
+				$filename = $file->getClientOriginalName();
+				$destinationPath = 'imagenes/';
+				$file->move($destinationPath, $filename);
+				// $this->file->put('carros/' . $filename, \File::get($destinationPath . $filename));
+			    $s3->upload('carros', 'carros/' . $filename, \File::get($destinationPath . $filename));
 
+			    // $s3->putObject(array(
+			    //        'Bucket' => 'carros',
+			    //        'Key'    => '',
+			    //        // 'Secret'	=> '23MUXo6Y3o7FtfftFHYm2AoHmCFdAzH0WlI2NhLm',
+			    //        'Body'   =>  \File::get($destinationPath . $filename),
+			    //        'ACL'    => 'public-read',
+			    //    ));
+
+
+				\File::delete($destinationPath . $filename);
+			    // $resource = fopen('/path/to/file', 'r');
+			} catch (S3Exception $e) {
+			    // echo "There was an error uploading the file.\n";
+			    return "";
+			}
+			
 			return $filename;
 		}
 		return $carro->imagen;

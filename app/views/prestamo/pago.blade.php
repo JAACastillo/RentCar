@@ -21,17 +21,19 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group col-md-12 col-sm-12">
-                        {{ Form::label('descuento', 'Descuento', array('class' => 'control-label')) }}
-                        <br>
-                        <div class="input-group">
-                            <span class="input-group-addon glyphicon glyphicon-sort"> </span>
-                            {{ Form::text('descuento', null, array('placeholder' => 'Descuento', 'class' => 'form-control')) }}
-                            @if($errors->has('descuento') )
-                                <span class="input-group-addon glyphicon glyphicon-remove alert-danger"> </span>
-                            @endif
+                    @if(Auth::user()->tipo == "Administrador")
+                        <div class="form-group col-md-12 col-sm-12">
+                            {{ Form::label('descuento', 'Descuento', array('class' => 'control-label')) }}
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon glyphicon glyphicon-sort"> </span>
+                                {{ Form::text('descuento', null, array('placeholder' => 'Descuento', 'class' => 'form-control')) }}
+                                @if($errors->has('descuento') )
+                                    <span class="input-group-addon glyphicon glyphicon-remove alert-danger"> </span>
+                                @endif
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
                 @if($prestamo->estado_id <= 4)
                     <div class="panel-footer text-center">

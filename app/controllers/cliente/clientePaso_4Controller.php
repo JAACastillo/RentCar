@@ -1,7 +1,21 @@
 <?php
+
+require 'vendor/autoload.php';
+use Illuminate\Filesystem\Filesystem;
+
+use Aws\S3\S3Client;
+use Aws\S3\Exception\S3Exception;
+
+
 class clientePaso_4Controller extends BaseController
 {
    
+   protected $file;
+
+   public function __construct(Filesystem $file){
+    $this->file = $file;
+   }
+
 
     //nuevo paso 4
 
@@ -52,11 +66,28 @@ class clientePaso_4Controller extends BaseController
 
     private function saveImage($imagen){
         if(Input::hasFile('imagen')){
+          try {
+            $s3 = S3Client::factory(
+                    array(
+                            'driver' => 's3',
+                            'key'    => env('S3_KEY'),
+                            'secret' => env('S3_SECRET'),
+                            // 'region' => 'US Standard',
+                            'bucket' => env('S3_BUCKET')
+
+                        )
+                );
             $file = Input::file('imagen');
-            $destinationPath = 'assets/images/documentos/';
             $filename = $file->getClientOriginalName();
+            $destinationPath = 'imagenes/';
             $file->move($destinationPath, $filename);
-            // $data['imagen'] = $filename;
+            $s3->upload('carros', 'documentos/' . $filename, \File::get($destinationPath . $filename);
+            \File::delete($destinationPath . $filename);
+              // $resource = fopen('/path/to/file', 'r');
+          } catch (S3Exception $e) {
+              // echo "There was an error uploading the file.\n";
+              return "";
+          }
             return $filename;
         }
         return $imagen;
