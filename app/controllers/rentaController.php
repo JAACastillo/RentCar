@@ -117,6 +117,7 @@ class rentaController extends BaseController{
         // return $prestamo;
         $carros = detalleCarro::where('fechaInicio', '<=', $prestamo->fechaInicio)
                                 ->where('fechaFin', '>=', $prestamo->fechaFin)
+                                ->whereEmpresa_id(1)
                                 ->groupBy('id')
                                 ->orderBy('precio', 'asc')
                                 ->paginate(8);

@@ -26,7 +26,7 @@
 								</div>
 								<div class="main-block">									
 									<div class="product-img">
-										<img class="img-responsive" ng-src="assets/img/@{{extra.imagen}}" alt="foto del accesorio" width="80px" />
+										<img class="img-responsive" ng-src="https://s3.amazonaws.com/carros/extras/@{{extra.imagen}}" alt="foto del accesorio" width="80px" />
 									</div>
 									<div class="product-info">
 										<h3 class="entry-format" ng-bind="extra.nombre"></h3>

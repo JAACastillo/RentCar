@@ -18,7 +18,7 @@
 					<div class="main-block">									
 						<div class="product-img">
 							<!-- <img src="http://placehold.it/150x75" alt="" /> -->
-							<img src="" ng-src="assets/images/carros/@{{carro.imagen}}" alt="" width="150px" height="75px" />
+							<img src="" ng-src="@{{carro.imagen}}" alt="" width="150px" height="75px" />
 						</div>
 						<div class="product-info">
 							<h3 class="entry-format">@{{carro.marca}} <span>|  @{{carro.modelo}}</span> 

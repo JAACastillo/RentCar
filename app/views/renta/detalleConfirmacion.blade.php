@@ -2,7 +2,7 @@
 <aside class="" ng-controller="confirmationController">	
 	<div class="panel panel-primary">
 		<h3 class="panel-heading">
-			<img src="images/order_info.png" alt="" />
+			<img src="{{url('images/order_info.png')}}" alt="" />
 			Su solicitud ha sido recibida, se le confirmará por correo electrónico.
 		</h3>
 		<div class="panel-body">

@@ -77,7 +77,7 @@ app.controller('reservaController', ['reservaService', '$log', '$scope', '$rootS
 		getService.post('administrar', $scope.reservas).then(function (data){
 			// $log.info(data);
 			$window.localStorage['confirmacionReserva'] = JSON.stringify(data);
-			$window.location = "/confirmacion";
+			$window.location = "/renta/confirmacion";
 		},
 		function(data){
 			$log.info(data)
@@ -219,7 +219,7 @@ app.factory('reservaService', ['$window', '$log', function ($window, $log){
 			$scope.extras = data['data'];
 		})
 		$scope.loading = false;
-	}, 2000);
+	}, 10);
 	
 	$scope.add = function (extra){ 
     	$rootScope.$emit('addExtra', extra);
@@ -279,7 +279,7 @@ app.factory('reservaService', ['$window', '$log', function ($window, $log){
 			// reservaService.set('')
 			$window.localStorage.removeItem("fechaReserva");
 			$window.localStorage['confirmacionReserva'] = JSON.stringify(reserva);
-			$window.location = "/confirmacion";
+			$window.location = "/renta/confirmacion";
 		});
 	}
 }])

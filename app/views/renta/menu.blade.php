@@ -2,7 +2,7 @@
 			<div id="branding">
 				<div id="branding-content">
 					<div class="title-content">
-						<a href="{{url('/')}}" title=""><img class="site-logo" src="images/logo-multiautos.jpg" alt="" /></a>
+						<a href="{{url('/')}}" title=""><img class="site-logo" src="{{url('images/logo-multiautos.jpg')}}" alt="" /></a>
 						<h1 class="site-title"><a href="01-home-v1.html" title=""></a></h1>								
 					</div>					
 					<div class="access-content">
