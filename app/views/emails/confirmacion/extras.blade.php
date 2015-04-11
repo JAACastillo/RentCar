@@ -7,7 +7,7 @@
 		<p > {{$extra->definicion->nombre}} <span class="price"> {{$extra->precio}}</span></p>
 		
 		<?php
-			$precio += round($extra->cantidad($prestamo->dias,$prestamo->horas),2);
+			$precio += round($extra->cantidad($prestamo->dias,$prestamo->horas, $prestamo->cobroPorHora),2);
 		?>
 	@endforeach
 </div>

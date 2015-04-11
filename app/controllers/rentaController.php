@@ -79,7 +79,7 @@ class rentaController extends BaseController{
                 return Response::json($prestamo, 201);
             }
 
-            return Response::json($prestamo->errors,200);
+            return Response::json($prestamo->errors,400);
         }
         return Response::json('No hay carro', 501);
     }
