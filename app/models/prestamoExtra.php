@@ -11,9 +11,11 @@ class prestamoExtra extends Eloquent {
 	}
 
 
-    public function cantidad($dias,$horas){
+    public function cantidad($dias,$horas, $cobroPorHora){
         if($this->attributes['unaVez'])
             return $this->attributes['precio'];
+        if(! $cobroPorHora)
+        	$horas = 24;
         return ($this->attributes['precio'] * $dias + (($this->attributes['precio']/24) * $horas));
     }
 }

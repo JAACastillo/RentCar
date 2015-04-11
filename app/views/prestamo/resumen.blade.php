@@ -37,7 +37,7 @@
 					{{$extra->definicion->nombre}}
 					<small>@ {{$extra->precio}}</small>
 					<small class='pull-right'>$
-						{{round($extra->cantidad($prestamo->dias,$prestamo->horas),2)}}
+						{{round($extra->cantidad($prestamo->dias,$prestamo->horas, $prestamo->cobroPorHora),2)}}
 					</small>
 				</h4>
 				@if(!$extra->definicion->obligatorio)
@@ -56,7 +56,7 @@
 			</div>
 
 			<?php
-				$precio += round($extra->cantidad($prestamo->dias,$prestamo->horas),2);
+				$precio += round($extra->cantidad($prestamo->dias,$prestamo->horas, $prestamo->cobroPorHora),2);
 			?>
 		@endforeach
 
