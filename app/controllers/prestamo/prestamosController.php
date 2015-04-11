@@ -12,7 +12,7 @@ class prestamosController extends BaseController{
           	$prestamo->valor = round($prestamo->precio * $prestamo->dias + ($prestamo->precio / 24 * $prestamo->horas),2);
           	foreach ($prestamo->extras as $extra) {
           		// return round($extra->cantidad($prestamo->dias,$prestamo->horas),2);
-          		$prestamo->valor += round($extra->cantidad($prestamo->dias,$prestamo->horas),2);
+          		$prestamo->valor += round($extra->cantidad($prestamo->dias,$prestamo->horas, $prestamo->cobroPorHora),2);
           	}
           }
 

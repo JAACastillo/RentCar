@@ -19,7 +19,7 @@
                    
                 </ul> -->
                 <li><img class="img-responsive" alt="600x300" src="{{Auth::user()->empresa->imagen}}" width="100px" height="30px"></li>
-                <li>{{ HTML::link(route('prestamoLista'), 'Prestamos') }}</li>
+                <li>{{ HTML::link(route('prestamoLista'), 'Negocios') }}</li>
                 <li>{{ HTML::link(route('clienteLista'), 'Clientes') }}</li>
                 <li>{{ HTML::link(route('prospectoList'), 'Prospectos') }}</li>
 
