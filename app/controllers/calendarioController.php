@@ -23,7 +23,7 @@ class calendarioController extends BaseController{
     // Salida::whereBetween('fecha_inicio', array($start, $end))
     //                         ->get();
 
-    $evetos  = [];
+    $eventos  = [];
 
     $addTime = 21600000; //6 horas
 
