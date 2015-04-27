@@ -93,7 +93,7 @@ class prestamosController extends BaseController{
 
       // return $prestamo;
 
-      $pdf->loadView('pdfs.contrato', compact('prestamo', 'empresa'))->setPaper('legal');
+      $pdf->loadView('pdfs.contrato', compact('prestamo', 'empresa'));//->setPaper('legal');
       return $pdf->stream();
     }
 

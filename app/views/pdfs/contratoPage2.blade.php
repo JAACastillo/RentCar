@@ -1,6 +1,7 @@
 	{{-- PAGINA 2 --}}
+
 	<center>CONTRATO DE ARRENDAMIENTO</center>
-	<div>
+	<div class="pagina2">
 		<ol type=I>
 			<li>{{$empresa->nombre}} que a partir de este momento se denominara “la arrendadora” da al “arrendatario” cuyo nombre aparece  en la pagina uno de este contrato, en depósito, bajo su total responsabilidad, el vehículo y accesorios descritos en el mismo, del cual se han tomado fotografías que sirven como evidencia de las condiciones en que es entregado dicho vehículo y de los accesorios que este incluye, adicionalmente me comprometo  a regresar el vehículo con el mismo nivel de combustible y condiciones en que lo recibo.</li>
 			<li>La vigencia de este contrato es el asignado en la pagina uno del mismo, el cual se computara en base a horas y días completos. El “arrendatario” se obliga a devolver dentro del plazo convenido el vehículo dado en depósito en la oficina de “La arrendadora” donde lo recibe, o si estuviese autorizado en las oficinas centrales o en  cualquier de sus sucursales si las hubiese o en el lugar que acordaren en el contrato. El “arrendatario” incurrirá en el delito de apropiación indebida si no devuelve el vehículo en el tiempo estipulado y desde ese momento faculta a “La arrendadora, para que pueda recoger dicho vehículo en el lugar donde se encuentre sin previa autorización judicial y queda convenido que el monto de la renta correrá hasta el momento que “la arrendadora” reciba el vehículo a su entera satisfacción y en las mismas condiciones en que se le entrego al arrendatario.</li>
@@ -99,8 +100,8 @@
 			@endif
 		</p>
 	</div>
-	<br/><br/><br/>
-	<div>
+	<br/>
+	<div style="font-size:10px">
 		@if($prestamo->cliente_id != $prestamo->conductor_id)
 		<span class="left" style="width: 50%;">F.______________________________________________________</span>
 		<span class="right" style="width: 50%; text-align: right;">F.______________________________________________________</span>

@@ -79,7 +79,7 @@ class clientePaso_4Controller extends BaseController
                         )
                 );
             $file = Input::file('imagen');
-            $filename = $file->getClientOriginalName();
+            $filename = time() . Auth::user()->id . '.' .  \Str::lower($file->getClientOriginalExtension());// $filename = $file->getClientOriginalName();
             $destinationPath = 'imagenes/';
             $file->move($destinationPath, $filename);
             $s3->upload('carros', 'documentos/' . $filename, \File::get($destinationPath . $filename));
