@@ -79,7 +79,7 @@ class prestamosController extends BaseController{
       $pdf = App::make('dompdf');
 
       $this->datosCliente($prestamo->cliente, array('Pasaporte', 'Licencia', 'Tarjeta', 'Documento'));
- $empresa = Auth::user()->empresa;
+      $empresa = Auth::user()->empresa;
       if($prestamo->cliente_id != $prestamo->conductor_id) //para agregar lis datos del conductor adicional
       {
           $this->datosCliente($prestamo->conductor, array('Documento', 'Licencia'));
@@ -90,6 +90,13 @@ class prestamosController extends BaseController{
 
           $prestamo['conductorDocumento'] = $prestamo->conductor->Documento;
       }
+
+      $precio = 0;
+      foreach ($prestamo->extras as $extra) {
+        $precio += round($extra->cantidad($prestamo->dias,$prestamo->horas, $prestamo->cobroPorHora),2);
+      }
+
+      $prestamo['totalPrestamo'] = $prestamo->total($precio);
 
       // return $prestamo;
 

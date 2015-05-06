@@ -178,15 +178,17 @@
 				<br/>
 				<div>
 					<strong>
-						<span class="left" style="width: 30%;">{{ strtoupper($prestamo->placa->color->color) }}</span>
-						<span class="center" style="left: 210px;">${{ $prestamo->valorReposicion }} dólares de los USA</span>
-						<span class="right" style="width: 30%;">{{ strtoupper($prestamo->placa->numero) }}</span>
+						<span class="left" style="width: 25%;">{{ strtoupper($prestamo->placa->color->color) }}</span>
+						<span class="center" style="left: 179px;">${{ $prestamo->valorReposicion }} dólares de los USA</span>
+						<span class="center" style="left: 350px;">US ${{ $prestamo['totalPrestamo'] }} </span>
+						<span class="right" style="width: 25%;">{{ strtoupper($prestamo->placa->numero) }}</span>
 					</strong>
 					<br/>
 					<div class="borde"></div>
-					<span class="left" style="width: 30%;">[25] Color.</span>
-					<span class="center" style="left: 210px;">[26] Valor de reposición.</span>
-					<span class="right" style="width: 30%;">[27] Placa.</span>
+					<span class="left" style="width: 25%;">[25] Color.</span>
+					<span class="center" style="left: 179px;">[26] Valor de reposición.</span>
+					<span class="center" style="left: 350px;">Total del alquiler.</span>
+					<span class="right" style="width: 25%;">[27] Placa.</span>
 				</div>
 				<br>
 				<div>
@@ -233,7 +235,7 @@
 					<span class="right" style="width: 50%; text-align: right;">F.______________________________________________________</span>
 					<br/>
 					<span class="left" style="width: 50%;"><center>{{ $prestamo->cliente->nombre }}</center></span>
-					<span class="right" style="width: 50%;"><center>{{ $prestamo->cliente->adicional_nombre }}</center></span>
+					<span class="right" style="width: 50%;"><center>{{ $prestamo->adicionalNombre }}</center></span>
 					<br/>
 					<span class="left" style="width: 50%;"><center>ARRENDATARIO</center></span>
 					<span class="right" style="width: 50%;"><center>CONDUCTOR ADICIONAL</center></span>
