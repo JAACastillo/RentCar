@@ -20,12 +20,12 @@
                     <br/>
                     <div>
                         {{-- Contenido --}}
-                        @if(Auth::user()->empresa->suscripcion->mensaje)
+                       {{--  @if(Auth::user()->empresa->suscripcion->mensaje)
                             <div class="alert alert-warning alert-dismissible" role="alert">
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <strong>Renueva tu cuenta!</strong> {{Auth::user()->empresa->suscripcion->mensaje}}
                             </div>
-                        @endif
+                        @endif --}}
 
                         @yield('content')
                     </div>

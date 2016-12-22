@@ -48,7 +48,7 @@ class clientePaso_4Controller extends BaseController
         $data['Cliente_id'] =  $id;
 
         $documento = new documento;
-        $data['imagen'] = $this->saveImage(null);
+        $data['imagen'] = $this->saveImage(Input::file('imagen'));
 
         if($documento->validAndSave($data)){
             return Redirect::back();
@@ -68,22 +68,11 @@ class clientePaso_4Controller extends BaseController
     private function saveImage($imagen){
         if(Input::hasFile('imagen')){
           try {
-            $s3 = S3Client::factory(
-                    array(
-                            'driver' => 's3',
-                            'key'    => getenv('S3_KEY'),
-                            'secret' => getenv('S3_SECRET'),
-                            // 'region' => 'US Standard',
-                            'bucket' => getenv('S3_BUCKET')
 
-                        )
-                );
             $file = Input::file('imagen');
-            $filename = time() . Auth::user()->id . '.' .  \Str::lower($file->getClientOriginalExtension());// $filename = $file->getClientOriginalName();
-            $destinationPath = 'imagenes/';
+            $filename = \Str::lower($file->getclientoriginalname());
+            $destinationPath = 'public/assets/images/documentos';
             $file->move($destinationPath, $filename);
-            $s3->upload('carros', 'documentos/' . $filename, \File::get($destinationPath . $filename));
-            \File::delete($destinationPath . $filename);
               // $resource = fopen('/path/to/file', 'r');
           } catch (S3Exception $e) {
               // echo "There was an error uploading the file.\n";

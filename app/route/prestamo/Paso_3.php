@@ -11,7 +11,7 @@
 
 
 
-    Route::get('prestamo/{id}/{extra}/extra',  ['as' => 'prestamoExtra',   'uses' => 'prestamoPaso_3Controller@add']);
+    Route::get('prestamo/{id}/extra',  ['as' => 'prestamoExtra',   'uses' => 'prestamoPaso_3Controller@index']);
     Route::get('prestamo/{id}/delete-extra',            ['as' => 'extraDelete',     'uses' => 'prestamoPaso_3Controller@delete']);
 //Revisar de aqui para abajo
 

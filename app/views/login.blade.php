@@ -22,7 +22,6 @@
             <br/>
             <div class="row">
                 <div class="col-md-offset-4 col-md-4 col-md-offset-4 col-sm-offset-3 col-sm-6 col-sm-offset-3">
-                    <img class="img-responsive hidden-xs" alt="600x300" src="home/images/Finder_256.png">
                     <br/>
                     @if(Session::has('mensaje_info'))
                         <div class="alert {{ Session::get('clase') }}">

@@ -11,7 +11,7 @@ class prestamoPaso_3Controller extends BaseController
 
         $paso = 3;
         $extras =   Extra::where('empresa_id', Auth::user()->empresa->id)
-                    ->where('activo', 1)
+                    // ->where('activo', 1)
                     ->get();
         return View::make('prestamo/extra',compact('prestamo','extras','paso'));
     }

@@ -4,7 +4,7 @@
 	<title>Imagen</title>
 </head>
 <body>
-	{{HTML::image('https://s3.amazonaws.com/carros/documentos/' . $nombre, '', ['width' => '500px'])}}
+	{{HTML::image('assets/images/documentos/' . $nombre, '', ['width' => '500px'])}}
 	
 </body>
 </html>

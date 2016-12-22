@@ -71,14 +71,14 @@ Route::filter('guest', function()
 });
 
 
-Route::filter('plan', function(){
-	if(is_null(Auth::user()->empresa->suscripcion))
-		App::abort(406);
+// Route::filter('plan', function(){
+// 	if(is_null(Auth::user()->empresa->suscripcion))
+// 		App::abort(406);
 
-	if(!Auth::user()->empresa->suscripcion->vigente)
-			App::abort(405);
+// 	if(!Auth::user()->empresa->suscripcion->vigente)
+// 			App::abort(405);
 
-});
+// });
 
 /*
 |--------------------------------------------------------------------------

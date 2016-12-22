@@ -56,7 +56,7 @@
                         <div class="col-md-7 col-sm-7 input-group">
                             @if(!empty($extra->imagen))
                                 <div class="thumbnail">
-                                    <img class="img-responsive" src="{{ asset('assets/img/'.$extra->imagen) }}" width="100px" />
+                                    <img class="img-responsive" src="{{ asset('assets/images/logos/'.$extra->imagen) }}" width="100px" />
                                 </div>
                             @endif
                             <input id="ruta_imagen" name="imagen" type="file">

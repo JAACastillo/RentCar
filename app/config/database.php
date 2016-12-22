@@ -1,21 +1,12 @@
 <?php
 
 
-	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+	// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-	$host = $url["host"];
-	$username = $url["user"];
-	$password = $url["pass"];
-	$database = substr($url["path"], 1);
-	
-
-		// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-		// $host = "localhost";
-		// $username = "root";
-		// $password = "";
-		// $database = "carros";
-	
+	// $host = $url["host"];
+	// $username = $url["user"];
+	// $password = $url["pass"];
+	// $database = substr($url["path"], 1);	
 	
 return array(
 
@@ -82,10 +73,10 @@ return array(
 		// ),
 		'mysql' => array(
         'driver'    => 'mysql',
-        'host'      => $host,
-        'database'  => $database,
-        'username'  => $username,
-        'password'  => $password,
+        'host'      => 'localhost',
+        'database'  => 'bd_autos',
+        'username'  => 'root',
+        'password'  => '',
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
         'prefix'    => '',

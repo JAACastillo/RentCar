@@ -86,21 +86,10 @@ class CarroController extends BaseController {
 	private function saveImage($carro){
 		if(Input::hasFile('imagen')){
 			try {
-				$s3 = S3Client::factory(
-						array(
-								'driver' => 's3',
-								'key'    => getenv('S3_KEY'),
-								'secret' => getenv('S3_SECRET'),
-								// 'region' => 'US Standard',
-								'bucket' => getenv('S3_BUCKET')
-							)
-					);
 				$file = Input::file('imagen');
 				$filename = $file->getClientOriginalName();
-				$destinationPath = 'imagenes/';
+				$destinationPath = 'public/assets/images/carros';
 				$file->move($destinationPath, $filename);
-			    $s3->upload('carros', 'carros/' . $filename, \File::get($destinationPath . $filename));
-				\File::delete($destinationPath . $filename);
 			} catch (S3Exception $e) {
 			    return "";
 			}

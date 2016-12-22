@@ -42,7 +42,7 @@ class carro extends Eloquent {
 	        'equipamiento' 		=> 'max:20',
 	        'proveedor' 		=> 'max:50',
 
-	        // 'imagen'			=> 'required|max:10000|mimes:png,jpg,jpeg'
+	        'imagen'			=> 'required'
 	        // 'existencias' 		=> 'integer|required'
 	    ];
 

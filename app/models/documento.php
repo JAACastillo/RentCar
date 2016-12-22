@@ -37,13 +37,13 @@ class documento extends Eloquent {
 
 
 	public function getImagen(){
-		return url('imagen') . $this->attributes['imagen'];
+		return $this->attributes['imagen'];
 	}
 
 
 	public function getFotoAttribute(){
 		// return $this->attributes['imagen'];
-		return ('https://s3.amazonaws.com/carros/documentos/' . $this->attributes['imagen']);
+		return ('/carros/documentos/' . $this->attributes['imagen']);
 	}
 
 	public function tipo(){

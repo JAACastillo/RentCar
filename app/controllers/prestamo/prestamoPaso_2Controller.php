@@ -44,7 +44,7 @@ class prestamoPaso_2Controller extends BaseController
         $prestamo->carro_id = $idCarro;
         $prestamo->precio   = $precio;
         if($prestamo->estado_id == 1)
-            $prestamo->estado_id = 2;
+            $prestamo->estado_id = 4;
         $prestamo->save();
         // return $this
         $this->email($prestamo);

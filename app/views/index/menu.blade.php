@@ -18,7 +18,6 @@
                 <ul class="dropdown-menu">
                    
                 </ul> -->
-                <li><img class="img-responsive" alt="600x300" src="{{Auth::user()->empresa->imagen}}" width="100px" height="30px"></li>
                 <li>{{ HTML::link(route('prestamoLista'), 'Negocios') }}</li>
                 <li>{{ HTML::link(route('clienteLista'), 'Clientes') }}</li>
                 <li>{{ HTML::link(route('prospectoList'), 'Prospectos') }}</li>
@@ -37,11 +36,11 @@
             </li> -->
             <li>{{ HTML::link(route('carros'), 'Carros') }}</li>
             <li>{{ HTML::link(route('extra'), 'Extras / Servicios') }}</li>
-              @if(Auth::user()->empresa->id == 1)
+              {{-- @if(Auth::user()->empresa->id == 0) --}}
                     <li>{{HTML::link(route('marcas'), 'Marcas')}}</li>
                     <li>{{HTML::link(route('modelos'), 'Modelos')}}</li>
                     <li>{{HTML::link(route('colores'), 'Colores')}}</li>
-                @endif  
+                {{-- @endif   --}}
         </ul>
         <form class="navbar-form navbar-left" role="search"  ng-controller='searchController'>
           <div class="form-group">
@@ -68,7 +67,7 @@
                         <li class="divider"></li>
                         <li>{{ HTML::link(route('usuarios'), ' Usuarios', array('class' => 'glyphicon glyphicon-user')) }}</li>
                         <li>{{ HTML::link(route('reportes'), ' Reportes', array('class' => 'glyphicon glyphicon-calendar')) }}</li>
-                        <li>{{ HTML::link(route('empresas'), ' Empresas', array('class' => 'glyphicon fa fa-building')) }}</li>           
+                        {{-- <li>{{ HTML::link(route('empresas'), ' Empresas', array('class' => 'glyphicon fa fa-building')) }}</li>            --}}
                     @endif
 
                     <li class="divider"></li>

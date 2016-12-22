@@ -12,7 +12,8 @@
 
 
 Route::get('/', function(){
-    return View::make('home.index');
+    // return View::make('home.index');
+    return Redirect::to('admin');
 });
 
 Route::group(array('prefix' => '/renta'), function(){

@@ -16,7 +16,7 @@ class CreateEmpresasTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('nombre', 100);
-			$table->text('direccion', 65535);
+			$table->text('direccion', 100);
 			$table->string('telefono', 15);
 			$table->string('email', 150);
 			$table->string('logo', 100);

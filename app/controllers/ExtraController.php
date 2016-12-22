@@ -85,24 +85,10 @@ class ExtraController extends \BaseController {
 
 	private function saveLogo(){
 		try {
-				$s3 = S3Client::factory(
-						array(
-								'driver' => 's3',
-								'key'    => getenv('S3_KEY'),
-								'secret' => getenv('S3_SECRET'),
-								// 'region' => 'US Standard',
-								'bucket' => getenv('S3_BUCKET')
-							)
-					);
 				$file = Input::file('imagen');
 				$filename = $file->getClientOriginalName();
-				$destinationPath = 'imagenes/';
+				$destinationPath = 'public/assets/images/logos';
 				$file->move($destinationPath, $filename);
-				// $this->file->put('carros/' . $filename, \File::get($destinationPath . $filename));
-			    $s3->upload('carros', 'extras/' . $filename, \File::get($destinationPath . $filename));
-
-				\File::delete($destinationPath . $filename);
-			    // $resource = fopen('/path/to/file', 'r');
 			} catch (S3Exception $e) {
 			    // echo "There was an error uploading the file.\n";
 			    return "";
